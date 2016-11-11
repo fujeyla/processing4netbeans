@@ -3,7 +3,7 @@
 <filesystem>
     <folder name="Templates">
         <folder name="Processing">
-            <file name="ProcessingRendering.java" url="processingRenderedClass.fmk">
+            <file name="ProcessingRendering.java" url="ProcessingRendering.ftl">
                 <attr name="template" boolvalue="true"/>
                 <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/processing/processingfiletemplates/ProcessingFileTemplate.png"/>
                 <attr name="displayName" stringvalue="Processing class with rendering parent as member"/>
