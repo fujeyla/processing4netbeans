@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Templates">
+        <folder name="Processing">
+            <file name="ProcessingRendering.java" url="processingRenderedClass.fmk">
+                <attr name="template" boolvalue="true"/>
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/processing/processingfiletemplates/ProcessingFileTemplate.png"/>
+                <attr name="displayName" stringvalue="Processing class with rendering parent as member"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>
