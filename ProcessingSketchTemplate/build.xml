@@ -13,7 +13,7 @@
             <exclude name="**/src/**/*.java"/>
             <exclude name="**/build/"/>
             <exclude name="**/dist/"/>
-            <exclude name="**/nbproject/private/"/>
+            <!--exclude name="**/nbproject/private/"/-->
         </zip>
     </target>    
     

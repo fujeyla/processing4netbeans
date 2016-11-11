@@ -47,24 +47,14 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 // TODO define position attribute
-@TemplateRegistrations({
     @TemplateRegistration(folder = "Project/Processing", 
                           displayName = "#ProcessingSketchTemplate_displayName", 
                           description = "ProcessingSketchTemplateDescription.html", 
                           iconBase = "org/processing/processingsketchtemplate/ProcessingSketchTemplate.png", 
                           content = "ProcessingSketchTemplateProject.zip")
-        
-//        ,
-//    
-//    @TemplateRegistration(folder = "Project/Processing/Sketch", 
-//                          displayName = "#ProcessingSketchTemplate_javaClassDisplayName", 
-//                          content = "Sketch.ftl",
-//                          scriptEngine = "freemarker")    
-})
 
 @Messages({
-    "ProcessingSketchTemplate_displayName=Processing Sketch Template",
-    "ProcessingSketchTemplate_javaClassDisplayName=Processing Sketch Class Template",
+    "ProcessingSketchTemplate_displayName=Processing Sketch Template"
 })
 
 public class ProcessingSketchTemplateWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
