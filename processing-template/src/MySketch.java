@@ -2,6 +2,15 @@
 
 import processing.core.*;
 
+/**
+ * This is the template of your java Processing sketch
+ * You can use the Processing API now. 
+ * Don't forget that in java, Processing color type doesn't exist, 
+ * use int instead
+ * e.g. int red = color(255,0,0);
+ * @author Jerome
+ */
+
 // created by ${user}
 public class MySketch extends PApplet {
 

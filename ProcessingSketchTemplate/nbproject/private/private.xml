@@ -2,12 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/F:/dev/p34netbeans/ProcessingSketchTemplate/build.xml</file>
+        <group/>
+        <group name="Processing4Netbeans">
             <file>file:/F:/dev/p34netbeans/ProcessingSketchTemplate/src/org/processing/processingsketchtemplate/ProcessingSketchTemplateWizardIterator.java</file>
-            <file>file:/F:/dev/p34netbeans/ProcessingSketchTemplate/src/org/processing/processingsketchtemplate/ProcessingSketchTemplatePanelVisual.java</file>
+            <file>file:/F:/dev/p34netbeans/ProcessingSketchTemplate/src/org/processing/processingsketchtemplate/ProcessingSketchTemplateWizardPanel.java</file>
             <file>file:/F:/dev/p34netbeans/ProcessingSketchTemplate/src/org/processing/processingsketchtemplate/layer.xml</file>
-            <file>file:/F:/dev/p34netbeans/ProcessingSketchTemplate/src/org/processing/processingsketchtemplate/Sketch.ftl</file>
+            <file>file:/F:/dev/p34netbeans/ProcessingSketchTemplate/src/org/processing/processingsketchtemplate/ProcessingSketchTemplate.png</file>
         </group>
     </open-files>
 </project-private>
