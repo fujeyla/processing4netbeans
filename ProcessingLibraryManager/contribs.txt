@@ -14,34 +14,110 @@ id=098
 categories=I/O
 
 library
-minRevision=0
-name=grafica
+minRevision=0250
+name=Tramontana for Processing
 maxRevision=0
-sentence=Create simple and configurable 2D plots with Processing.
-url=http://jagracar.com/grafica.php
-prettyVersion=1.7.0
-paragraph=
-version=8
-authors=[Javier Gracia Carpio](http://jagracar.com)
-download=https://raw.github.com/jagracar/grafica/master/releases/grafica.zip
+sentence=Tramontana is a platform for interactive spaces.
+url=https://pierdr.github.io/Tramontana-for-Processing/
+prettyVersion=1.0.2
+paragraph=With Tramontana will be simple to architect coreographies and interactive spaces. Connected multiple devices to create mesmerizing multidevice and immersive experiences just from a sketch. You can download Tramontana for iOS at this link: https://itunes.apple.com/US/app/id1121069555?mt=8
+version=10
+authors=[Pierluigi Dalla Rosa](http://www.pierdr.com)
+download=https://pierdr.github.io/Tramontana-for-Processing/tramontana.zip
 type=library
-id=126
-categories=Math
+id=217
+categories=I/O,Utilities
 
 library
 minRevision=0
-name=LeapMotion
+name=Dashed Lines
 maxRevision=0
-sentence=Forwards Leap Motion controller events to a Processing sketch.
-url=https://github.com/heuermh/leap-motion-processing
-prettyVersion=1.26
-paragraph=
-version=28
-authors=[Michael Heuer](https://github.com/heuermh)
-download=https://dl.dropbox.com/u/87680069/LeapMotion.zip
+sentence=Draw shapes with dashed lines!
+url=https://github.com/garciadelcastillo/-dashed-lines-for-processing-
+prettyVersion=0.0.3
+paragraph=This library allows you draw geometry with dashed strokes, using the same set of basic geometry methods as in Processing.
+version=3
+authors=[Jose Luis Garcia del Castillo](http://www.garciadelcastillo.es)
+download=http://www.garciadelcastillo.es/dashedlines/dashedlines.zip
 type=library
-id=090
-categories=Hardware
+id=214
+categories=Geometry
+
+library
+minRevision=0
+name=extruder
+maxRevision=0
+sentence=A 3d library to create extrusions
+url=http://maxlfarrell.gitlab.io/extruder
+prettyVersion=1.02
+lastUpdated=0
+paragraph=A 3d library to create 3d shapes from 2d shapes in the simplest, library free way possible
+version=3
+authors=[Max Farrell](https://arcane.info/)
+download=http://maxlfarrell.gitlab.io/extruder/extruder.zip
+type=library
+id=215
+categories=3D
+
+library
+minRevision=0
+name=PostFX for Processing
+maxRevision=0
+sentence=Framework for applying post effects to PGraphic objects.
+url=https://github.com/cansik/processing-postfx
+prettyVersion=v1.2
+paragraph=Create multi-pass renderings without touching a shader. Use the built in shaders to run texture filters on P2D and P3D graphic objects.
+version=12
+authors=[Florian Bruggisser](https://bildspur.ch)
+download=https://github.com/cansik/processing-postfx/releases/download/latest/PostFX.zip
+type=library
+id=212
+categories=Utilities
+
+library
+minRevision=0
+name=Mouse 2D Transformations
+maxRevision=0
+sentence=Calculation of mouse coordinates in transformed 2D animation matrices.
+url=https://github.com/AlexPoupakis/mouse2DTransformations
+prettyVersion=1.0.0
+paragraph=Processing's reserved keywords "mouseX" & "mouseY" store the mouse coordinates with respect to the upper left corner of the sketch. When no transformations (i.e. translate(), scale(), rotate(), pushMatrix(), popMatrix()) are applied, these coordinates refer to the actual position in the animation matrix. However, when transformations are applied, this relation no longer holds. With this library, one can get the actual position of the mouse in both transformed and non transformed animation matrices.
+version=1
+authors=Alex Poupakis
+download=https://github.com/AlexPoupakis/mouse2DTransformations/releases/download/latest/Mouse2DTransformations.zip
+type=library
+id=213
+categories=Utilities
+
+library
+minRevision=227
+name=ColorHarmony
+maxRevision=0
+sentence=Harmonized color palette generator
+url=http://cagewebdev.com/colorharmony-processing-library/
+prettyVersion=1.0
+paragraph=
+version=10
+authors=[Rolf van Gelder](http://cagewebdev.com/)
+download=http://cagewebdev.com/colorharmony/colorharmony.zip
+type=library
+id=210
+categories=Utilities
+
+library
+minRevision=0
+name=PS3Eye
+maxRevision=0
+sentence=A PS3Eye library using libusb.
+url=https://github.com/diwi/PS3Eye
+prettyVersion=1.05
+paragraph=
+version=6
+authors=[Thomas Diewald](http://www.thomasdiewald.com)
+download=https://github.com/diwi/PS3Eye/releases/download/latest/PS3Eye.zip
+type=library
+id=211
+categories=Hardware,Video & Vision
 
 library
 minRevision=0
@@ -87,36 +163,6 @@ type=library
 id=093
 categories=Other
 
-library
-minRevision=0
-name=Executor
-maxRevision=0
-sentence=Scheduled executor service for Processing.
-url=https://github.com/heuermh/executor-processing
-prettyVersion=1.0.3
-paragraph=Run tasks (reflective method calls to your PApplet) later, repeat tasks at intervals, and schedule tasks to happen after other scheduled tasks.
-version=4
-authors=[Michael Heuer](https://github.com/heuermh)
-download=https://dl.dropbox.com/u/87680069/executor.zip
-type=library
-id=094
-categories=Utilities
-
-library
-minRevision=0
-name=Frames
-maxRevision=0
-sentence=Sprite sheet and frame animation support in Processing.
-url=https://github.com/heuermh/frames-processing
-prettyVersion=1.1
-paragraph=
-version=2
-authors=[Michael Heuer](https://github.com/heuermh)
-download=https://dl.dropbox.com/u/87680069/frames.zip
-type=library
-id=095
-categories=Animation
-
 tool
 minRevision=0
 name=Applet Maker & Signer
@@ -134,33 +180,33 @@ categories=
 
 library
 minRevision=0
-name=SelectFile
+name=XYscope
 maxRevision=0
-sentence=Android library which provides Dialogs for selectInput(), selectFolder() and selectOutput() methods.
-url=https://github.com/pif/android-select-file/tree/dlg
-prettyVersion=0.0.1
-paragraph=Android misses open&save file dialogs. SelectFile library adds these dialogs to the Processing for Android. It is specifically designed for Android mode in Processing 2.0. All interaction with the library is done through FileLibrary class.
-version=1
-authors=[Ostap Andrusiv](http://andrusiv.com)
-download=http://pif.github.com/android-select-file/download/SelectFile.zip
+sentence=XYScope is a library for Processing to render graphics on a vector display (oscilloscope, laser) by converting them to audio.
+url=http://teddavis.org/xyscope
+prettyVersion=2.1.0
+paragraph=This includes most primitive shapes (point, line, rect, ellipse, vertex, ...) by converting those points to waveforms (oscillators with custom wavetables) and generating audio in real time using the Minim library. Vector graphics shine on a vector display and now you can view your generative works like never before! Tested on MacOS 10.9+ / Windows / Linux (RPi!).
+version=3
+authors=[Ted Davis](http://www.teddavis.org)
+download=http://teddavis.org/xyscope/download/XYscope.zip
 type=library
-id=097
-categories=I/O
+id=219
+categories=Sound,Hardware,Animation
 
 library
-minRevision=0
-name=Most Pixels Ever
-maxRevision=228
-sentence=Framework for spanning Processing sketches across multiple screens.
-url=https://github.com/shiffman/Most-Pixels-Ever-Processing
-prettyVersion=2.0.2
-paragraph=Through server / client communication multiple sketches can be run on separate machines and synced.
-version=3
-authors=[Daniel Shiffman](http://shiffman.net)
-download=http://shiffman.net/p5/libraries/mpe/mpe.zip
+minRevision=197
+name=Redis
+maxRevision=0
+sentence=Wrapper to use [Redis](http://redis.io/) in [Processing](http://processing.org/). It's based on [Jedis](https://github.com/xetorthio/jedis), a small Java client by [Jonathan Leibiusky](https://github.com/xetorthio).
+url=https://github.com/nok/redis-processing
+prettyVersion=1.1.3
+paragraph=
+version=6
+authors=[Darius Morawiec](http://nok.onl)
+download=https://raw.githubusercontent.com/nok/redis-processing/master/download/Redis.zip
 type=library
-id=010
-categories=Utilities
+id=133
+categories=Data
 
 library
 minRevision=0
@@ -168,9 +214,9 @@ name=OpenCV for Processing
 maxRevision=0
 sentence=Computer vision with OpenCV.
 url=https://github.com/atduskgreg/opencv-processing
-prettyVersion=0.5.2
+prettyVersion=0.5.4
 paragraph=Based on the official OpenCV Java API. A nice Processing-style API for common tasks and access to the full power of the OpenCV API for the advanced stuff.
-version=13
+version=17
 authors=[Greg Borenstein](http://gregborenstein.com)
 download=https://github.com/atduskgreg/opencv-processing/releases/download/latest/opencv_processing.zip
 type=library
@@ -251,19 +297,22 @@ type=library
 id=016
 categories=I/O
 
-library
-minRevision=227
-name=PeasyCam
+examples
+minRevision=0
+name=Processing Handbook, 2nd Edition
 maxRevision=0
-sentence=A mouse driven camera-control library for 3D sketches.
-url=http://mrfeinberg.com/peasycam/
-prettyVersion=202
-version=202
-authors=[Jonathan Feinberg](http://mrfeinberg.com/)
-download=http://mrfeinberg.com/peasycam/peasycam.zip
-type=library
-id=017
-categories=3D
+sentence=Example code for the book Processing: A Programming Handbook for Visual Designers and Artists, Second Edition. MIT Press, 2014.
+url=http://www.processing.org
+prettyVersion=1.0
+maxVersion=0
+paragraph=
+version=1
+authors=[Casey Reas](http://reas.com/) and [Ben Fry](http://benfry.com/)
+download=https://processing.org/handbook/handbook_2e.zip
+minVersion=0
+type=examples
+id=165
+categories=Books
 
 library
 minRevision=0
@@ -273,7 +322,7 @@ sentence=A wrapper for JBox2D, a 2D physics engine.
 url=http://www.ricardmarxer.com/fisica
 prettyVersion=
 paragraph=It is simply a wrapper around [JBox2D](http://www.jbox2d.org/). It tries to make it much easier to create physical models by exposing an object oriented API similar to [PPhys2D](http://pphys2d.jmcouillard.com/) physics library for Processing.
-version=15
+version=16
 authors=[Ricard Marxer](http://www.ricardmarxer.com/)
 download=http://www.ricardmarxer.com/fisica/download/fisica.zip
 type=library
@@ -326,6 +375,21 @@ id=138
 categories=Sound
 
 library
+minRevision=0
+name=GazeTrack: Eye-tracking for Processing (Tobii EyeX and 4C)
+maxRevision=0
+sentence=GazeTrack is library that supports basic gaze tracking using various Tobii eye-trackers.
+url=http://hci.soc.napier.ac.uk/GazeTrack/
+prettyVersion=2.0.3
+paragraph=The library was tested on Windows 10, using the Tobii EyeX and 4C eye-trackers. It should also work with any Tobii-enabled laptops.
+version=2
+authors=[Augusto Esteves](http://hci.soc.napier.ac.uk)
+download=http://hci.soc.napier.ac.uk/GazeTrack/GazeTrack.zip
+type=library
+id=225
+categories=Hardware
+
+library
 minRevision=227
 name=Zxing For Processing (QRCode lib)
 maxRevision=0
@@ -339,6 +403,67 @@ download=http://cagewebdev.com/zxing4p/zxing4p3.zip
 type=library
 id=198
 categories=Data
+
+library
+minRevision=0
+name=meter
+maxRevision=0
+sentence=Display software, Arduino, or other sensor values in an analog meter.
+url=https://github.com/BillKujawa/meter.git
+prettyVersion=1.0c
+paragraph=Defaults to an analog voltage meter of 0 - 5 volt range. A sensor reading is mapped to a meter value. Defaults to a half circle meter. The upper left corner of the meter is specified. The height is calculated as needed. Most of the meter parts can be changed by setting variables. May be used without microprocessor hardware to display software values.
+version=1
+authors=Bill (Papa) Kujawa
+download=https://github.com/BillKujawa/meter/releases/download/latest/meter.zip
+type=library
+id=224
+categories=Hardware,GUI
+
+library
+minRevision=227
+name=nyar4psg
+maxRevision=0
+sentence=NyARToolkit for proce55ing(NyAR4psg) is front-end of NyARToolkit for Java. This library can easily make the AR application.
+url=https://github.com/nyatla/NyARToolkit-for-Processing/
+prettyVersion=3.0.7
+paragraph=This library requires a web camera to make AR view.
+version=3
+authors=[R.Iizuka](http://nyatla.jp)
+download=https://github.com/nyatla/NyARToolkit-for-Processing/releases/download/latest/nyar4psg.zip
+type=library
+id=223
+categories=Video & Vision
+
+library
+minRevision=0250
+name=libreTSPSWP
+maxRevision=0
+sentence=a toolkit for sensing people in spaces with phones.
+url=http://pierdr.github.io/libreTSPSWP
+prettyVersion=1.0
+version=1
+paragraph=With libreTSPSWP you will be able to harness the computing power of your phone to sense people (among other things) in space and broadcast the result to a Processing sketch..
+You can download the app here: https://itunes.apple.com/us/app/libretspswp/id1276040950?mt=8
+authors=[Pierluigi Dalla Rosa](www.pierdr.com)
+download=https://pierdr.github.io/libreTSPSWP/download/libreTSPSWP.zip
+type=library
+id=222
+categories=Video & Vision
+
+tool
+minRevision=0246
+name=Extended Code Completion
+maxRevision=0
+sentence=Extended code completion for statements like if, while and for etc.
+url=http://jonathan.dahlberg.media/ecc/
+prettyVersion=1.0.0
+paragraph=The principle of Extended Code Completion is based on the principle that you write something and then presses ctrl+space to expand it, e.g. write if and press ctrl+space and it will expand to if(){ }
+version=1
+authors=[Jonathan Dahlberg](http://jonathan.dahlberg.media/)
+download=http://jonathan.dahlberg.media/ecc/ecc.zip
+type=tool
+id=221
+categories=
 
 library
 minRevision=0
@@ -415,20 +540,20 @@ type=library
 id=021
 categories=Math
 
-tool
+library
 minRevision=0
-name=Color Selector Plus
-maxRevision=228
-sentence=A feature rich color selector tool.
-url=https://code.google.com/p/color-selector-plus/
-prettyVersion=3.0.0
-paragraph=Save colors, pick colors from screen and more.
-version=7
-authors=[Manindra Moharana](http://mkmoharana.com)
-download=https://dl.dropboxusercontent.com/u/69944346/ColorSelectorPlus/ColorSelectorPlusTool.zip
-type=tool
-id=020
-categories=
+name=Sweep for Processing
+maxRevision=0
+sentence=Scanse Sweep LIDAR API for Processing
+url=https://github.com/cansik/sweep-processing
+prettyVersion=v0.3.1
+paragraph=Use the Scanse Sweep LIDAR together with Processing.
+version=31
+authors=[Florian Bruggisser](https://bildspur.ch)
+download=https://github.com/cansik/sweep-processing/releases/download/latest/SweepProcessing.zip
+type=library
+id=218
+categories=Hardware
 
 library
 minRevision=0
@@ -476,6 +601,21 @@ id=129
 categories=Utilities
 
 library
+minRevision=228
+name=SelectFile
+maxRevision=0
+sentence=Android library which provides Dialogs for selectInput(), selectFolder() and selectOutput() methods.
+url=https://andrusiv.com/android-select-file/
+prettyVersion=0.0.2
+paragraph=Android has no open&save file dialogs. SelectFile library adds these dialogs to the Processing for Android. Tested with Processing 3.0.
+version=2
+authors=[Ostap Andrusiv](http://andrusiv.com)
+download=https://andrusiv.com/android-select-file/download/SelectFile.zip
+type=library
+id=097
+categories=I/O
+
+library
 minRevision=0
 name=Apple Light Sensor
 maxRevision=228
@@ -489,21 +629,6 @@ download=http://projects.formatlos.de/ambientlightsensor/download/AmbientLightSe
 type=library
 id=028
 categories=Hardware
-
-library
-minRevision=197
-name=Redis
-maxRevision=0
-sentence=Wrapper to use [Redis](http://redis.io/) in [Processing](http://processing.org/). It's based on [Jedis](https://github.com/xetorthio/jedis), a small Java client by [Jonathan Leibiusky](https://github.com/xetorthio).
-url=https://github.com/nok/redis-processing
-prettyVersion=1.1.3
-paragraph=
-version=6
-authors=[Darius Morawiec](http://nok.onl)
-download=https://raw.githubusercontent.com/nok/redis-processing/master/download/Redis.zip
-type=library
-id=133
-categories=Data
 
 library
 minRevision=0
@@ -536,19 +661,34 @@ id=131
 categories=Math
 
 library
-minRevision=0
+minRevision=0246
 name=planetarium
-maxRevision=228
+maxRevision=0
 sentence=This library provides a renderer to project 3D scenes on a full dome.
 url=https://github.com/codeanticode/planetarium
-prettyVersion=0.4
+prettyVersion=0.5
 paragraph=It works by rendering the scene 5 times (one from each direction: top, right, etc) and then assembling the output of these renderings into a single environmental map that covers the entire dome.
-version=4
-authors=[Andres Colubri](http://interfaze.info)
+version=5
+authors=[Andres Colubri](http://andrescolubri.net/)
 download=https://github.com/codeanticode/planetarium/releases/download/latest/planetarium.zip
 type=library
 id=130
 categories=3D
+
+library
+minRevision=0
+name=LiquidFunProcessing
+maxRevision=0
+sentence=RigidBody/Particle simulation using [JBox2d/LiquidFun](http://www.jbox2d.org/), a 2D physics engine.
+url=https://github.com/diwi/LiquidFunProcessing
+prettyVersion=1.05
+paragraph=JBox2d is a Java port of the C++ physics engines [LiquidFun](http://google.github.io/liquidfun) and [Box2d](https://github.com/erincatto/Box2D).
+version=8
+authors=[Thomas Diewald](http://www.thomasdiewald.com)
+download=https://github.com/diwi/LiquidFunProcessing/releases/download/latest/LiquidFunProcessing.zip
+type=library
+id=216
+categories=Simulation
 
 library
 minRevision=218
@@ -601,10 +741,10 @@ name=p5.js Mode
 maxRevision=0
 sentence=Adds a simple editor for p5.js code
 url=https://github.com/fathominfo/processing-p5js-mode
-prettyVersion=1.0.3
+prettyVersion=1.0.4
 imports=processing.mode.java.JavaMode
 paragraph=p5jsMode is a simple editor for p5.js
-version=3
+version=4
 authors=[Fathom Information Design](http://fathom.info/)
 download=https://github.com/fathominfo/processing-p5js-mode/releases/download/latest/p5jsMode.zip
 type=mode
@@ -617,9 +757,9 @@ name=Temboo
 maxRevision=0
 sentence=Generate code to connect to 100+ APIs, code utilities, and databases in Processing.
 url=http://www.temboo.com/processing
-prettyVersion=2.18.2
+prettyVersion=2.22.0
 paragraph=Explore [temboo.com](http://temboo.com/) and auto-generate Processing sketches for your favorite web services and resources.
-version=2018002
+version=2022000
 authors=[Temboo](http://temboo.com/)
 download=https://temboo.com/files/temboo-processing.zip
 type=library
@@ -688,18 +828,17 @@ id=197
 categories=Hardware
 
 library
-minRevision=0
-name=QueasyCam
+minRevision=227
+name=PeasyCam
 maxRevision=0
-sentence=A super-simple FPS camera for Processing.
-url=https://github.com/jrc03c/queasycam
-prettyVersion=1.4
-paragraph=
-version=4
-authors=[Josh Castle](https://twitter.com/jrc03c)
-download=https://github.com/jrc03c/queasycam/releases/download/latest/queasycam.zip
+sentence=A mouse driven camera-control library for 3D sketches.
+url=http://mrfeinberg.com/peasycam/
+prettyVersion=302
+version=302
+authors=[Jonathan Feinberg](http://mrfeinberg.com/)
+download=http://mrfeinberg.com/peasycam/peasycam.zip
 type=library
-id=196
+id=017
 categories=3D
 
 tool
@@ -723,9 +862,9 @@ name=Hardware I/O
 maxRevision=0
 sentence=Access peripherals on the Raspberry Pi and other Linux-based computers.
 url=http://processing.org/reference/libraries/io/index.html
-prettyVersion=0251
+prettyVersion=0264
 paragraph=For other platforms, this is solely provided in order to build and export sketches that require processing.io.
-version=0251
+version=0264
 authors=The Processing Foundation
 download=https://github.com/gohai/processing/releases/download/latest/io.zip
 type=library
@@ -763,19 +902,19 @@ id=192
 categories=Utilities
 
 library
-minRevision=0
-name=Signal Filter
+minRevision=263
+name=Image processing algorithms
 maxRevision=0
-sentence=Filter noisy and jittery signals.
-url=https://github.com/SableRaf/signalfilter
-prettyVersion=1.0.0
-paragraph=OneEuroFilter for Processing based on the Java implementation by StŽphane Conversy.
-version=1
-authors=[Raphael de Courville](https://vimeo.com/sableraf/)
-download=http://s176381904.onlinehome.fr/processing/SignalFilter/download/signalFilter.zip
+sentence=Implementations of basic image processing algorithms for processing.
+url=http://github.com/milchreis/processing-imageprocessing
+prettyVersion=1.3.0
+paragraph=Easy access for bluring or coloring images or video streams.
+version=5
+authors=[Nick 'Milchreis' Müller](http://github.com/milchreis)
+download=https://github.com/Milchreis/processing-imageprocessing/releases/download/latest/processing-imageprocessing.zip
 type=library
-id=115
-categories=Data
+id=227
+categories=Video & Vision
 
 tool
 minRevision=0
@@ -800,7 +939,7 @@ sentence=Extends 2D geometry operations to facilitate generative geometry. Inclu
 url=http://www.ricardmarxer.com/geomerative
 prettyVersion=
 paragraph=This library exposes the shapes (such as vector drawings or typographies) in a more approchable way. Geomerative makes it easy to access the paths, the handles and the points, making it easy to develop generative typography and geometry pieces in Processing.
-version=40
+version=41
 authors=[Ricard Marxer](http://www.ricardmarxer.com/)
 download=http://www.ricardmarxer.com/geomerative/geomerative.zip
 type=library
@@ -854,18 +993,18 @@ categories=Data
 
 library
 minRevision=0
-name=point2line
+name=Kinect4WinSDK
 maxRevision=0
-sentence=Basic tools for calculating geometry in two dimensions.
-url=http://sixthsensor.dk/code/p5/point2line
-prettyVersion=06
-paragraph=
-version=6
-authors=[Carl Emil Carlsen](http://sixthsensor.dk/) and [Daniel Høier Øhrgaard](http://stimulacrum.com)
-download=http://sixthsensor.dk/code/p5/point2line/download/point2line.zip
+sentence=A simple wrapper for the Microsoft Kinect for Windows SDK version 1.8.
+url=http://www.magicandlove.com/blog/research/kinect-for-processing-library/
+prettyVersion=1.2.0
+paragraph=It works in the Windows environment only.
+version=120
+authors=[Bryan Chung](http://www.magicandlove.com)
+download=http://www.magicandlove.com/software/Kinect4WinSDK.zip
 type=library
-id=113
-categories=Geometry
+id=149
+categories=Video & Vision
 
 tool
 minRevision=0
@@ -958,14 +1097,14 @@ id=035
 categories=Sound
 
 library
-minRevision=227
+minRevision=233
 name=Camera 3D
 maxRevision=0
-sentence=Alter P3D Rendering to produce Stereoscopic Animations and other 3D effects.
+sentence=Alter P3D Rendering to produce Stereoscopic Animations, 360 Video and other 3D effects.
 url=http://ixora.io/projects/camera-3D/
-prettyVersion=1.1
+prettyVersion=1.2.1
 paragraph=Library will execute the draw method multiple times with different camera settings and combine them together to form one composite frame.
-version=2
+version=4
 authors=[Jim Schmitz](http://ixora.io)
 download=http://ixora.io/downloads/camera3D/Camera3D.zip
 type=library
@@ -974,33 +1113,49 @@ categories=3D
 
 library
 minRevision=0
-name=YahooWeather
+name=Timing Utilities
 maxRevision=0
-sentence=Framework for including weather data into Processing.
-url=http://www.onformative.com/lab/google-weather-library-for-processing/
-prettyVersion=0.91
-paragraph=
+sentence=Library containing a number of useful classes for time-keeping in Processing
+url=https://github.com/Lord-of-the-Galaxy/Timing-Utilities
+prettyVersion=0.1.1
+lastUpdated=0
+paragraph=Currently only has Stopwatch class.
 version=1
-authors=[onformative](http://www.onformative.com/)
-download=http://mrzl.net/yahooweather/YahooWeather.zip
+authors=Lord of Galaxy
+download=https://github.com/Lord-of-the-Galaxy/Timing-Utilities/releases/download/latest/timing_utils.zip
 type=library
-id=053
-categories=Data
+id=207
+categories=Utilities
 
 library
-minRevision=227
-name=bRigid
+minRevision=100
+name=AP-Sync
 maxRevision=0
-sentence=bRigid provides classes for an easier handling of jBullet in Processing
-url=http://www.lab-eds.org/bRigid
-prettyVersion=3.0
-paragraph=bRigid is thought as a kind of Processing port for the bullet physics simulation library written in C++. This library allows the interaction of rigid bodies in 3D. Geometry/ Shapes are build with Processing PShape Class, for convinient export(dxf)
-version=6
-authors=[Daniel Koehler](http://www.lab-eds.org)
-download=https://dl.dropboxusercontent.com/u/6030446/bRigid/bRigid.zip
+sentence=AP-Sync it the easy way to sync data to processing from your arduino or any microcontroller to processing and back.
+url=http://ap-sync.github.io
+prettyVersion=peace
+paragraph=Its simple api makes syncing data a breeze.
+version=1.0.0
+authors=[Nigel Tiany](http://nigeltiany.com)
+download=https://ap-sync.github.io/libs/AP_sync_processing/APsync.zip
 type=library
-id=108
-categories=Simulation
+id=206
+categories=I/O,Data
+
+library
+minRevision=0
+name=Simple Receipt Printer
+maxRevision=0
+sentence=Print on attached Thermal Receipt Printers
+url=https://github.com/gohai/processing-simplereceiptprinter
+prettyVersion=1.1
+paragraph=Made for Linux-based Single Board Computers such as the Raspberry Pi
+version=2
+authors=[Gottfried Haider](http://gottfriedhaider.com/)
+download=https://github.com/gohai/processing-simplereceiptprinter/releases/download/latest/processing-simplereceiptprinter.zip
+type=library
+id=209
+categories=I/O
 
 library
 minRevision=0
@@ -1018,34 +1173,19 @@ id=109
 categories=Hardware
 
 library
-minRevision=244
-name=Syphon
-maxRevision=0
-sentence=This library allows to share frames between applications in OSX using the Syphon framework.
-url=https://github.com/Syphon/Processing
-prettyVersion=2.0-RC2
-paragraph=Syphon is an open source Mac OS X technology that allows applications to share frames - full frame rate video or stills - with one another in realtime. This library wraps Syphon using Java and provides a simple interface for frame sharing in Processing.
-version=5
-authors=[Andres Colubri](http://andrescolubri.net/)
-download=https://github.com/Syphon/Processing/releases/download/latest/Syphon.zip
-type=library
-id=148
-categories=Video & Vision
-
-tool
 minRevision=0
-name=TabManager
-maxRevision=228
-sentence=PDE-Tabs are listed vertically in a separate window.
-url=http://thomasdiewald.com/processing/tools/TabManager/
-prettyVersion=2.0.0
-paragraph=TabManager is a processing tool, that lists the PDE-Tabs (sketchcodes) vertically in a separate window.
-version=2
-authors=[Thomas Diewald](http://thomasdiewald.com)
-download=http://thomasdiewald.com/processing/tools/TabManager/download/TabManager.zip
-type=tool
-id=049
-categories=
+name=QueasyCam
+maxRevision=0
+sentence=A super-simple FPS camera for Processing.
+url=https://github.com/jrc03c/queasycam
+prettyVersion=1.4
+paragraph=
+version=4
+authors=[Josh Castle](https://twitter.com/jrc03c)
+download=https://github.com/jrc03c/queasycam/releases/download/latest/queasycam.zip
+type=library
+id=196
+categories=3D
 
 library
 minRevision=0
@@ -1078,15 +1218,15 @@ id=103
 categories=Data
 
 mode
-minRevision=246
+minRevision=249
 name=Android Mode
-prettyVersion=3.0.2
+prettyVersion=4.0.3
 sentence=Create projects with Processing for Android devices
 url=http://android.processing.org
 imports=processing.mode.java.JavaMode
 maxRevision=0
-paragraph=This version of the Android Mode is for Processing 3.0+
-version=253
+paragraph=This version of the Android Mode is for Processing 3.1+
+version=270
 authors=[The Processing Foundation](https://processingfoundation.org/)
 download=https://github.com/processing/processing-android/releases/download/latest/AndroidMode.zip
 type=mode
@@ -1107,21 +1247,6 @@ download=http://www.thecloudlab.org/processing/download/ComputationalGeometry.zi
 type=library
 id=106
 categories=Geometry
-
-library
-minRevision=0
-name=punktiert
-maxRevision=0
-sentence=Particle engine for local particle behaviors.
-url=http://www.lab-eds.org/punktiert
-prettyVersion=3.0
-paragraph=Punktiert is a particle engine based and thought as an extension of Karsten Schmidt's toxiclibs.physics code. This library is optimized for the local negotiation between particles. And it allows hierarchies between multiple particle groups. The access and methods are simplified, no more difference between 2D/3D, extended behaviors. This library is developed through and for an architectural context. Based on my teaching experiences over the past couple years.
-version=3
-authors=[Daniel Koehler](http://www.lab-eds.org)
-download=https://dl.dropboxusercontent.com/u/6030446/punktiert/punktiert.zip
-type=library
-id=107
-categories=Simulation
 
 library
 minRevision=0
@@ -1294,9 +1419,9 @@ name=G4P GUI Builder
 maxRevision=0
 sentence=Graphic design tool for creating user interfaces with G4P.
 url=http://www.lagers.org.uk/g4ptool/index.html
-prettyVersion=4.2
+prettyVersion=4.2.1
 paragraph=Provides a visual environment for the rapid creation and editing of user interfaces using GUI controls from the [G4P](http://www.lagers.org.uk) library. It generates all the source code necessary for the creation of the components and skeleton event handlers for the user to complete. The [G4P](http://www.lagers.org.uk) library will need to be installed to run the completed sketch.
-version=20
+version=21
 authors=[Peter Lager](http://www.lagers.org.uk)
 download=http://www.lagers.org.uk/processing3/guibuilder/G4PTool.zip
 type=tool
@@ -1309,9 +1434,9 @@ name=MQTT
 maxRevision=0
 sentence=MQTT library for Processing based on the Eclipse Paho project.
 url=https://github.com/256dpi/processing-mqtt
-prettyVersion=1.6.1
+prettyVersion=1.6.3
 paragraph=
-version=14
+version=16
 authors=[Joel Gaehwiler](https://github.com/256dpi)
 download=https://github.com/256dpi/processing-mqtt/releases/download/latest/mqtt.zip
 type=library
@@ -1367,12 +1492,12 @@ library
 minRevision=0
 name=HiVis
 maxRevision=0
-sentence=Tools to import, manipulate, process and visualise data.
+sentence=Import data and manipulate it with statistical and other functions. Designed to be simple to use for novice programmers while being highly flexible and extensible. Includes many examples and tutorials. Check out olivercoleman.github.io/hivis for a 30 second crash course.
 url=https://github.com/OliverColeman/hivis
-prettyVersion=1.1.1
-paragraph=Built-in data types are: DataSeries (storing sequential data elements that may be numeric, Date, String or any other kind of object); and DataTable, which combine a set of DataSeries with associated labels. Data sets may be manipulated using various filters and transformations. New filters and transformations may be created. Data may be imported from external sources, for example a spreadsheet. HiVis will do its best to accommodate the interchange of data of different types when it makes sense to do so, for example a floating-point value with no fractional part may be assigned to a DataSeries that stores integer values. Includes many examples of loading, manipulating, and visualising data.
-version=3
-authors=[Oliver J. Coleman, Narayan Sankaran](https://github.com/OliverColeman/)
+prettyVersion=2.0.0
+paragraph=Typically raw data is loaded from a data source, for example a spreadsheet, and then <strong>views</strong> of that data are derived from it via transformation operations or functions. Some example views are mathematical and statistical operations, filtering and rearranging elements of the data, sorting and grouping data, or applying a function to every element of the data. Custom views can be created too. If the data source changes, the derived views are updated in real-time.
+version=4
+authors=[Philip Poronnik, Oliver Bown, Oliver Coleman, Phillip Gough, Narayan Sankaran](https://github.com/OliverColeman/)
 download=https://github.com/OliverColeman/hivis/releases/download/latest/HiVis.zip
 type=library
 id=203
@@ -1422,6 +1547,21 @@ download=https://github.com/alexandrainst/processing_websockets/releases/downloa
 type=library
 id=175
 categories=I/O,Data
+
+library
+minRevision=0227
+name=Jasmine
+maxRevision=0
+sentence=A super fast numerical expression and algorithm calculator.
+url=http://www.lagers.org.uk/jasmine
+prettyVersion=1.0.1
+paragraph=Uses the ASM byte code manipulation library to compile and evaluate mathematical expressions. It supports variables and programming constructs for selection and iteration.
+version=2
+authors=[Peter Lager](http://www.lagers.org.uk)
+download=http://www.lagers.org.uk/processing/jasmine/Jasmine.zip
+type=library
+id=156
+categories=Math
 
 tool
 minRevision=0
@@ -1490,9 +1630,9 @@ name=Spout for Processing
 maxRevision=0
 sentence=For openGL texture sharing between Microsoft Windows applications using the Spout framework.
 url=https://github.com/leadedge/SpoutProcessing/wiki
-prettyVersion=2.0.5.4
+prettyVersion=2.0.6.0
 paragraph=Find out more about Spout [here](http://spout.zeal.co).
-version=4
+version=6
 authors=[Lynn Jarvis](http://spout.zeal.co) and [Martin Froehlich](http://maybites.ch)
 download=https://github.com/leadedge/SpoutProcessing/releases/download/latest/spout.zip
 type=library
@@ -1500,16 +1640,16 @@ id=186
 categories=Video & Vision
 
 library
-minRevision=0
+minRevision=233
 name=Video Export
 maxRevision=0
 sentence=Simple video file exporter.
-url=http://funprogramming.org/VideoExport-for-Processing
-prettyVersion=0.1.6
+url=https://funprogramming.org/VideoExport-for-Processing
+prettyVersion=0.2.3
 paragraph=Create movies you can share online.
-version=16
+version=23
 authors=[Abe Pazos](http://hamoid.com)
-download=http://funprogramming.org/VideoExport-for-Processing/download/VideoExport.zip
+download=https://funprogramming.org/VideoExport-for-Processing/download/VideoExport.zip
 type=library
 id=187
 categories=I/O
@@ -1520,9 +1660,9 @@ name=GL Video
 maxRevision=0
 sentence=Hardware accelerated video on the Raspberry Pi, Linux and Mac (experimental)
 url=https://github.com/gohai/processing-glvideo
-prettyVersion=1.2.1
+prettyVersion=1.2.3
 paragraph=This uses GL textures and accelerated video decoding. Recommended for Raspberry Pi with Broadcom's binary GLES2 graphics driver.
-version=6
+version=8
 authors=[Gottfried Haider](http://gottfriedhaider.com/)
 download=https://github.com/gohai/processing-glvideo/releases/download/latest/processing-glvideo.zip
 type=library
@@ -1535,9 +1675,9 @@ name=Ptmx
 maxRevision=0
 sentence=Add Tiled maps to your sketch.
 url=https://github.com/linux-man/ptmx
-prettyVersion=0.2
+prettyVersion=0.3
 paragraph=
-version=2
+version=3
 authors=[Caldas Lopes](http://softlab.pt)
 download=http://softlab.pt/ptmx/ptmx.zip
 type=library
@@ -1550,9 +1690,9 @@ name=GaussSense SDK for Processing
 maxRevision=0
 sentence=Library to use the [GaussSense](http://gausstoys.com/) in [Processing](https://processing.org).
 url=http://developers.gausstoys.com/processing/
-prettyVersion=1.0.1
+prettyVersion=1.0.3
 paragraph=Mini/Basic/Advanced GaussSense are supported in this library.
-version=101
+version=103
 authors=[GaussToys Inc.](http://gausstoys.com)
 download=http://developers.gausstoys.com/processing/GaussSense.zip
 type=library
@@ -1576,31 +1716,15 @@ categories=Simulation,Data
 
 library
 minRevision=0
-name=Gamepad
-maxRevision=0
-sentence=A port of the Gamepad ActionScript library for Flash.
-url=https://github.com/heuermh/gamepad-processing
-prettyVersion=2.0
-paragraph=Requires Processing 2.0b7 or later.
-version=3
-authors=[Michael Heuer](https://github.com/heuermh) and [Iain Lobb](http://blog.iainlobb.com)
-download=https://dl.dropbox.com/u/87680069/gamepad.zip
-type=library
-id=060
-categories=I/O
-
-library
-minRevision=0
 name=RiTa
 maxRevision=0
-sentence=A library for experiments in natural language and generative writing (in Java & JavaScript).
+sentence=A library for experiments in generative natural language.
 url=http://rednoise.org/rita/
-prettyVersion=1.1.51
-imports=rita
-paragraph=RiTa is a library for experiments in natural language and generative writing. Components include text-generation (via context-free grammars and Markov-chains), tagging (for syllables, phonemes, stresses, and parts-of-speech), conjugation, pluralization, stemming, letter-to-phoneme mapping, and a user-customizable lexicon. RiTa and RiTaJS (the JavaScript version) work alone or in conjunction with Processing, Node, Bower, Browserify, Android, etc. and are free, libre, and open-source (via the GPL).
-version=1151
-authors=[Daniel C. Howe](http://rednoise.org/~dhowe)
-download=http://www.rednoise.org/rita/RiTa.zip
+prettyVersion=1.3.85
+paragraph=RiTa is a library for experiments in natural language and generative writing. Components include text-generation (via context-free grammars and n-grams), tagging (for syllables, phonemes, stresses, and parts-of-speech), conjugation, pluralization, stemming, letter-to-phoneme mapping, rhyme, alliteration and more. RiTa and RiTaJS work alone or in conjunction with Processing, p5.js, Node, Browserify, and Android and are free/libre and open-source (via the GPL).
+version=1385
+authors=[Daniel C. Howe](http://rednoise.org/daniel)
+download=http://rednoise.org/rita/rita.zip
 type=library
 id=063
 categories=Language
@@ -1641,9 +1765,9 @@ name=Ketai
 maxRevision=0
 sentence=Android library for working with sensors, cameras, multi-touch, networking, Bluetooth, WiFi Direct, Near Field Communication, and SQLite
 url=http://ketai.org/
-prettyVersion=v12
+prettyVersion=v14
 paragraph=The Ketai library simplifies working hardware devices and sensors built into Android phones and tablets. It is designed specifically for the Android mode in Processing 2.0+, and includes the following classes: KetaiSensor, KetaiGesture, KetaiCamera, KetaiSimpleFace, KetaiList, KetaiKeyboard, KetaiLocation, KetaiBluetooth, KetaiWiFiDirect, KetaiNFC, and KetaiSQLite.
-version=12
+version=14
 authors=[Daniel Sauter](http://daniel-sauter.com/) and j.duran
 download=http://ketailibrary.org/ketai.zip
 type=library
@@ -1686,9 +1810,9 @@ name=Simple HTTP Server
 maxRevision=253
 sentence=A simple HTTP Server for Processing, that serves static files and simplifies HttpHandler
 url=http://diskordier.net/simpleHTTPServer
-prettyVersion=1.5
+prettyVersion=1.6
 paragraph=Static Filehandler can handle html,css and js files. For different content-types a DynamicResponseHandler can be added, using a class that extends from the abstract class ResponseBuilder and implements String getResponse(String requestBody). For example JSON!
-version=5
+version=6
 authors=[Ramin Soleymani](http://diskordier.net)
 download=http://transfluxus.github.io/SimpleHTTPServer/download/SimpleHTTPServer.zip
 type=library
@@ -1701,13 +1825,43 @@ name=Python Mode for Processing 3
 maxRevision=0
 sentence=Write Processing sketches in Python.
 url=https://github.com/jdf/processing.py
-prettyVersion=Build 3020, built 2016/12/19 19:18
+prettyVersion=3040
 paragraph=
-version=3020
+version=3040
 authors=[Jonathan Feinberg](http://MrFeinberg.com/)
-download=http://py.processing.org/3/PythonMode.zip
+download=https://py.processing.org/3/PythonMode.zip
 type=mode
 id=169
+categories=
+
+library
+minRevision=0
+name=WootingKeyboard
+maxRevision=0
+sentence=This library can be used to analyze the raw data of the [Wooting keyboard](https://www.wooting.nl/).
+url=http://kiml.org/WootingKeyboard
+prettyVersion=1.0.3
+paragraph=The library will trigger onReadEvents when receive raw data from [Wooting keyboard](https://www.wooting.nl/). This data can be parsed into data of type String or HashMap through parseLog and parseData functions.
+version=4
+authors=[Shinhoo Park @ KAIST Interactive Media Lab](http://kiml.org/WootingKeyboard)
+download=https://github.com/Shinhoo/Wooting-Keyboard-Library/releases/download/lastest/WootingKeyboard.zip
+type=library
+id=229
+categories=I/O,Utilities,Data
+
+tool
+minRevision=0
+name=Perceptual colorpicker
+maxRevision=0
+sentence=Choose from 3 to 7 colors from CIE Lab or Lch with different graphic tools.
+url=https://www.perceptualcolor.org
+prettyVersion=1.0.0
+paragraph=PCP is a colorpicker that use a background to display different color plans from CIE Lab and LcH color spaces i.e. a/b, b/L, a/L, c/H, c/L, H/L. The third coordinate which is not in the plane define it in the colors volume. It can vary with slider as a constant or as a gradient. Upon these background you can use different tools i.e. segment, spline, polygon, related or palette to choose set of colors. Colors coordinates can be display in CIE Lab, CIE LcH, WEB, sRGB code. You can snapshot the whole user interface or just the color palette with coordinates as png file. You can also save in the clipboard the web codes.
+version=1
+authors=[Olivier Vicario](https://www.perceptualcolor.org)
+download=https://perceptualcolor.org/distribution/PerceptualColorPicker/download/PerceptualColorPicker.zip
+type=tool
+id=228
 categories=
 
 library
@@ -1727,20 +1881,19 @@ categories=Hardware
 
 examples
 minRevision=0
-name=Processing Handbook, 2nd Edition
+name=Processing for Android, 1st Edition
 maxRevision=0
-sentence=Example code for the book Processing: A Programming Handbook for Visual Designers and Artists, Second Edition. MIT Press, 2014.
-url=http://www.processing.org
+sentence=Code examples of the book "Processing for Android: Create Mobile, Sensor-Aware, and VR Applications Using Processing" (Apress, 2017).
+url=http://p5android-book.andrescolubri.net/
 prettyVersion=1.0
-maxVersion=0
+lastUpdated=0
 paragraph=
 version=1
-authors=[Casey Reas](http://reas.com/) and [Ben Fry](http://benfry.com/)
-download=https://processing.org/handbook/handbook_2e.zip
-minVersion=0
+authors=[Andres Colubri](http://andrescolubri.net/)
+download=https://github.com/Apress/processing-for-android/releases/download/latest/processing-for-android-examples.zip
 type=examples
-id=165
-categories=Books
+id=226
+categories=
 
 examples
 minRevision=0
@@ -1840,13 +1993,28 @@ categories=Books
 
 library
 minRevision=0
+name=Signal Filter
+maxRevision=0
+sentence=Filter noisy and jittery signals.
+url=https://github.com/SableRaf/signalfilter
+prettyVersion=1.0.0
+paragraph=OneEuroFilter for Processing based on the Java implementation by StŽphane Conversy.
+version=1
+authors=[Raphael de Courville](https://vimeo.com/sableraf/)
+download=http://s176381904.onlinehome.fr/processing/SignalFilter/download/signalFilter.zip
+type=library
+id=115
+categories=Data
+
+library
+minRevision=0
 name=HPGLGraphics
 maxRevision=0
 sentence=Write HPGL output from Processing sketches, suitable for sending to a pen-plotter.
 url=http://ciaron.net/HPGLGraphics
-prettyVersion=1.0
+prettyVersion=1.0.4
 paragraph=This library works in much the same way as PDF or DXF export - by wrapping your sketch code in beginRecord/endRecord, you can save your sketch as a .hpgl file.
-version=001
+version=005
 authors=[Ciaron Linstead](http://ciaron.net)
 download=http://ciaron.net/hpglgraphics/download/hpglgraphics.zip
 type=library
@@ -1859,9 +2027,9 @@ name=G4P
 maxRevision=0
 sentence=Provides a set of 2D GUI controls and multiple window support.
 url=http://www.lagers.org.uk/g4p
-prettyVersion=4.1.1
+prettyVersion=4.1.5
 paragraph=Controls include buttons, sliders, knobs, labels, textfields, timers, combo boxes, option buttons etc. and multiple windows.  [G4P GUI builder](http://www.lagers.org.uk/g4ptool/index.html) is a companion tool that enables the rapid (visual) development of user interfaces with this library.
-version=30
+version=34
 authors=[Peter Lager](http://www.lagers.org.uk)
 download=http://www.lagers.org.uk/processing3/g4p/G4P.zip
 type=library
@@ -1932,11 +2100,12 @@ library
 minRevision=228
 name=Sound
 maxRevision=0
-sentence=Sound library for Processing.
-url=http://processing.org/reference/libraries/sound/index.html
-prettyVersion=1.3.2
+sentence=Provides a simple way to work with audio.
+url=https://processing.org/reference/libraries/sound/index.html
+prettyVersion=2.0.0
+lastUpdated=0
 paragraph=
-version=7
+version=9
 authors=The Processing Foundation
 download=https://github.com/processing/processing-sound/releases/download/latest/sound.zip
 type=library
@@ -1979,10 +2148,10 @@ name=The Nature of Code
 maxRevision=0
 sentence=All examples from The Nature of Code book.
 url=http://natureofcode.com
-prettyVersion=2
+prettyVersion=3
 maxVersion=0
 paragraph=How can we capture the unpredictable evolutionary and emergent properties of nature in software? How can understanding the mathematical principles behind our physical world help us to create digital worlds? This book focuses on the programming strategies and techniques behind computer simulations of natural systems using Processing.
-version=2
+version=3
 authors=[Daniel Shiffman](http://shiffman.net)
 download=http://shiffman.net/p5/examples/natureofcode.zip
 minVersion=0
@@ -2006,19 +2175,19 @@ id=070
 categories=
 
 library
-minRevision=0227
-name=Jasmine
+minRevision=0
+name=dmxP512
 maxRevision=0
-sentence=A super fast numerical expression and algorithm calculator.
-url=http://www.lagers.org.uk/jasmine
-prettyVersion=1.0.1
-paragraph=Uses the ASM byte code manipulation library to compile and evaluate mathematical expressions. It supports variables and programming constructs for selection and iteration.
-version=2
-authors=[Peter Lager](http://www.lagers.org.uk)
-download=http://www.lagers.org.uk/processing/jasmine/Jasmine.zip
+sentence=DMX output for enttec DMX USB PRO and lanbox LCE.
+url=http://motscousus.com/stuff/2011-01_dmxP512/
+prettyVersion=1.3
+paragraph=
+version=3
+authors=Henri DAVID
+download=http://motscousus.com/stuff/2011-01_dmxP512/dmxP512.zip
 type=library
-id=156
-categories=Math
+id=071
+categories=Hardware
 
 library
 minRevision=246
@@ -2026,9 +2195,9 @@ name=SketchMapper
 maxRevision=0
 sentence=A GUI tool to map sketches onto surfaces.
 url=http://josephtaylor.github.io/sketch-mapper
-prettyVersion=4.1.1
+prettyVersion=4.1.3
 paragraph=
-version=7
+version=9
 authors=[J. Taylor OConnor](http://josephtaylor.github.io)
 download=http://josephtaylor.github.io/sketch-mapper/SketchMapper.zip
 type=library
@@ -2065,20 +2234,80 @@ type=library
 id=079
 categories=3D
 
+tool
+minRevision=228
+name=Reference Tool
+maxRevision=0
+sentence=A Tool that provides a built in reference for the Processing Development Environment.
+url=https://www.github.com/ReferenceTool
+prettyVersion=1.1.1
+paragraph=
+version=1
+authors=[Jae Hyun](https://www.github.com/jaewhyun)
+download=https://github.com/jaewhyun/ReferenceTool/releases/download/latest/ReferenceTool.zip
+type=tool
+id=234
+categories=
+
 library
 minRevision=0
-name=Kinect4WinSDK
+name=ArtNet for Java and Processing
 maxRevision=0
-sentence=A simple wrapper for the Microsoft Kinect for Windows SDK version 1.8.
-url=http://www.magicandlove.com/blog/research/kinect-for-processing-library/
-prettyVersion=1.2.0
-paragraph=It works in the Windows environment only.
-version=120
-authors=[Bryan Chung](http://www.magicandlove.com)
-download=http://www.magicandlove.com/software/Kinect4WinSDK.zip
+sentence=Framework for sending and receiving DMX data over the ArtNet protocol.
+url=https://github.com/cansik/artnet4j
+prettyVersion=v0.4.0
+paragraph=Send and receive DMX data over the ArtNet protocol.
+version=040
+authors=[Florian Bruggisser](https://bildspur.ch)
+download=https://github.com/cansik/artnet4j/releases/download/latest/artnet4j.zip
 type=library
-id=149
-categories=Video & Vision
+id=230
+categories=Data
+
+library
+minRevision=246
+name=Tracer
+maxRevision=0
+sentence=A toolset for making computational art and animation by tracing paths.
+url=http://www.objectstothinkwith.com/tracer/
+prettyVersion=0.0.0
+paragraph=
+version=0
+authors=[James Morrow](http://www.objectstothinkwith.com/)
+download=http://objectstothinkwith.com/tracer/tracer.zip
+type=library
+id=231
+categories=Geometry,Animation
+
+library
+minRevision=228
+name=Novation Launch Controller client
+maxRevision=0
+sentence=Control your sketches using the knobs and pads from Novation &reg; Launch Control&reg;.
+url=https://github.com/haschdl/pLaunchController
+prettyVersion=0.9a
+paragraph=Once connected to your computer, use the MIDI controller to control your sketch by\
+version=1
+authors=[Half Scheidl]()
+download=https://github.com/haschdl/pLaunchController/releases/download/latest/pLaunchController.zip
+type=library
+id=232
+categories=I/O
+
+tool
+minRevision=228
+name=Getting Started
+maxRevision=0
+sentence=A Tool that provides a quick introduction to the PDE for new/beginner users.
+url=http://www.github.com/jaewhyun/GettingStarted
+prettyVersion=1.1.0
+paragraph=
+version=1
+authors=[Jae Hyun](http://www.github.com/jaewhyun)
+download=https://github.com/jaewhyun/GettingStarted/releases/download/latest/GettingStarted.zip
+type=tool
+id=233
+categories=
 
 library
 minRevision=0
@@ -2142,11 +2371,11 @@ library
 minRevision=0
 name=PixelFlow
 maxRevision=0
-sentence=PixelFlow is a Processing library for high performance GPU-Computing (GLSL), like Fluid Simulation, SoftBody Dynamics, Optical Flow, Image processing ...
+sentence=PixelFlow is a Processing library for high performance GPU-Computing (GLSL), like Fluid Simulation, SoftBody Dynamics, Rendering, Optical Flow, Image processing ...
 url=https://github.com/diwi/PixelFlow
-prettyVersion=0.21
-paragraph=Fluid Simulation / SoftBody Dynamics / Optical Flow / Harris Corner Detection / Image Processing // Particle Systems / GLSL Tools
-version=9
+prettyVersion=1.3.0
+paragraph=Fluid Simulation / SoftBody Dynamics / Optical Flow / Harris Corner Detection / Image Processing / Particle Systems / Skylight Renderer / GLSL Tools
+version=62
 authors=[Thomas Diewald](http://www.thomasdiewald.com)
 download=https://github.com/diwi/PixelFlow/releases/download/latest/PixelFlow.zip
 type=library
@@ -2189,7 +2418,7 @@ name=ColorBlindness
 maxRevision=0
 sentence=Fast and easy to use utility for simulating color blindness or performing daltonization.
 url=http://ixora.io/projects/colorblindness/
-prettyVersion=1.0.0
+prettyVersion=1.0
 paragraph=Transforms colors so you can see what a color blind person would see when they look at your sketch.
 version=1
 authors=[Jim Schmitz](http://ixora.io)
@@ -2204,9 +2433,9 @@ name=Manuale di Programmazione Cinematografica
 maxRevision=0
 sentence=All code snippets from "Manuale di Programmazione Cinematografica" book.
 url=https://github.com/mad4j/book-mdpc
-prettyVersion=v1.0.3
+prettyVersion=v1.1.0
 paragraph=
-version=639
+version=802
 authors=[Daniele Olmisani](https://github.com/mad4j)
 download=http://mad4j.github.io/book-mdpc/book-mdpc.zip
 type=examples
@@ -2276,28 +2505,28 @@ categories=Geometry,Compilation,Simulation,Animation
 
 library
 minRevision=0
-name=TimedEvents
+name=Simple Tweet
 maxRevision=0
-sentence=A couple of classes for firing off timed events at regular or random intervals.
-url=http://multiply.org/processing/
-prettyVersion=1.0.1
-paragraph=TimedEvents provides 2 main functions: events fired periodically with a regular period or a random delay within a range you specify.
-version=2
-authors=[Jason Gessner](http://multiply.org/)
-download=http://www.multiply.org/processing/TimedEvents.zip
+sentence=Post images from Processing to Twitter
+url=https://github.com/gohai/processing-simpletweet
+prettyVersion=1
+paragraph=Also shows other uses of the Twitter API
+version=1
+authors=[Gottfried Haider](http://gottfriedhaider.com/)
+download=https://github.com/gohai/processing-simpletweet/releases/download/latest/processing-simpletweet.zip
 type=library
-id=082
-categories=Utilities
+id=208
+categories=Data
 
 library
 minRevision=227
 name=Dawesome Toolkit
 maxRevision=0
-sentence=Convenient utilities for some everyday tasks including simple layout using grids, creating patterns with a Vogel spiral, color pallete generation, displaying guides, simple debug panel as well as useful PVector list manipulation.
+sentence=Convenient utilities for some everyday tasks including simple layout using grids, lat lon distance calculation, creating patterns with a Vogel spiral, color pallete generation, displaying guides, simple debug panel as well as useful PVector list manipulation.
 url=http://cloud.brendandawes.com/dawesometoolkit/
-prettyVersion=0.6
+prettyVersion=0.9
 paragraph=
-version=6
+version=10
 authors=[Brendan Dawes](http://www.brendandawes.com/)
 download=http://cloud.brendandawes.com/dawesometoolkit/dawesometoolkit.zip
 type=library
@@ -2334,20 +2563,20 @@ type=library
 id=086
 categories=Utilities
 
-tool
-minRevision=0
-name=Sketch Outline
-maxRevision=228
-sentence=Provides an outline view of the member variables, functions and classes within a sketch and allows easy navigation between them. Similar to the outline view in Eclipse.
-url=https://github.com/Manindra29/Sketch-Outline
-prettyVersion=0.1.7
-paragraph=The list of member variables, functions and inner classes are shown in a tree view. Clicking on any node scrolls and moves the cursor to its definition in the code. Makes navigation within code fast and easy.
-version=2
-authors=[Manindra Moharana](http://www.mkmoharana.com/)
-download=http://dl.dropbox.com/u/69944346/SketchOutline/SketchOutline.zip
-type=tool
-id=085
-categories=
+library
+minRevision=244
+name=Syphon
+maxRevision=0
+sentence=This library allows to share frames between applications in OSX using the Syphon framework.
+url=https://github.com/Syphon/Processing
+prettyVersion=2.0
+paragraph=Syphon is an open source Mac OS X technology that allows applications to share frames - full frame rate video or stills - with one another in realtime. This library wraps Syphon using Java and provides a simple interface for frame sharing in Processing.
+version=7
+authors=[Andres Colubri](http://andrescolubri.net/)
+download=https://github.com/Syphon/Processing/releases/download/latest/Syphon.zip
+type=library
+id=148
+categories=Video & Vision
 
 library
 minRevision=0
@@ -2355,9 +2584,9 @@ name=OOCSI for Processing
 maxRevision=0
 sentence=Processing client library for the OOCSI system design infrastructure.
 url=http://iddi.github.io/oocsi-processing/
-prettyVersion=1.2
+prettyVersion=1.3.7
 paragraph=This library provides easy ways to connect a Processing sketch to an OOCSI server and communicate through this connection with other clients on many different platforms, such as Processing, Java, Android, OSC, and HTML/JavaScript via web sockets. Processing sketches can not only send and receive messages between specific clients, but also broadcast and subscribe to channels, which makes coordinating a large number of sketches or devices surprisingly simple and robust.
-version=120
+version=137
 authors=[Mathias Funk](http://www.mathias-funk.com/)
 download=http://iddi.github.io/oocsi-processing/oocsi.zip
 type=library
@@ -2380,14 +2609,14 @@ id=003
 categories=Animation
 
 library
-minRevision=246
+minRevision=256
 name=proscene
 maxRevision=0
 sentence=Library that eases the creation of interactive scenes.
 url=http://otrolado.info
-prettyVersion=3.0.0-beta.9
+prettyVersion=3.0.0
 paragraph=Main features include: 1. Default interactivity through the mouse and keyboard that simply does what you expect; 2. Generic support for Human Interface Devices; 3. Arcball, walkthrough and third person camera modes; 4. Hierarchical coordinate systems (frames), with functions to convert between them; 5. Coordinate systems can easily be moved with the mouse. 6. Keyframes; 7. Object picking; 8. Keyboard shortcuts and camera profiles customization; 8. Animation framework; 9. Screen drawing; and, 10. Off-screen rendering mode support.
-version=31
+version=32
 authors=[Jean Pierre Charalambos](http://otrolado.info)
 download=https://github.com/remixlab/proscene/releases/download/latest/proscene.zip
 type=library
@@ -2423,6 +2652,21 @@ download=http://staff.city.ac.uk/~jwo/giCentre/utils/gicentreUtils.zip
 type=library
 id=004
 categories=Compilation
+
+library
+minRevision=0
+name=HE_Mesh
+maxRevision=0
+sentence=HE_Mesh is an implementation of a half-edge datastructure for creating and manipulating 3D meshes.
+url=http://www.wblut.com/he_mesh/
+prettyVersion=6.1.1
+paragraph=
+version=6101
+authors=[Frederik Vanhoutte](http://www.wblut.com/)
+download=http://www.wblut.com/hemesh/hemesh.zip
+type=library
+id=009
+categories=3D
 
 library
 minRevision=0
@@ -2468,4 +2712,19 @@ download=http://igeo.jp/igeo.zip
 type=library
 id=123
 categories=3D
+
+library
+minRevision=0
+name=grafica
+maxRevision=0
+sentence=Create simple and configurable 2D plots with Processing.
+url=http://jagracar.com/grafica.php
+prettyVersion=1.8.0
+paragraph=
+version=9
+authors=[Javier Gracia Carpio](http://jagracar.com)
+download=https://raw.github.com/jagracar/grafica/master/releases/grafica.zip
+type=library
+id=126
+categories=Math
 
