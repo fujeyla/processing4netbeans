@@ -13,14 +13,14 @@ import org.openide.awt.ActionRegistration;
 import org.openide.util.NbBundle.Messages;
 
 @ActionID(
-        category = "Project",
+        category = "Build",
         id = "org.netbeans.modules.java.processingproject.AddProcessingLibAction"
 )
 @ActionRegistration(
         iconBase = "org/netbeans/modules/java/processingproject/ProcessingFileTemplate.png",
         displayName = "#CTL_AddProcessingLibAction"
 )
-@ActionReference(path = "Projects/Actions")
+@ActionReference(path = "Loaders/folder/any/Actions")
 @Messages("CTL_AddProcessingLibAction=Add Processing.org Lib")
 public final class AddProcessingLibAction implements ActionListener {
 

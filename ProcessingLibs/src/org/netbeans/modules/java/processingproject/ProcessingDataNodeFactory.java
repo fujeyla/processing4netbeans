@@ -8,55 +8,38 @@ import org.netbeans.modules.java.j2seproject.J2SEProject;
 import org.netbeans.spi.project.ui.support.NodeFactory;
 import org.netbeans.spi.project.ui.support.NodeList;
 import org.openide.filesystems.FileObject;
-import org.openide.loaders.DataNode;
 import org.openide.loaders.DataObject;
 import org.openide.loaders.DataObjectNotFoundException;
 import org.openide.nodes.FilterNode;
 import org.openide.nodes.Node;
 import org.openide.util.Exceptions;
 
-public class ProcessingContribsNodeFactory implements NodeFactory {
+public class ProcessingDataNodeFactory implements NodeFactory {
 
     @Override
     public NodeList<?> createNodes(Project project) {
         J2SEProject p = project.getLookup().lookup(J2SEProject.class);
         assert p != null;
-        return new ContribsNodeList(p);
+        return new DataNodeList(p);
     }
 
-    private class ContribsNodeList implements NodeList<Node> {
+    private class DataNodeList implements NodeList<Node> {
 
         J2SEProject project;
 
-        public ContribsNodeList(J2SEProject project) {
+        public DataNodeList(J2SEProject project) {
             this.project = project;
         }
 
         @Override
         public List<Node> keys() {
-            FileObject contribsFolder = project.getProjectDirectory().getFileObject("contribs");
+            FileObject dataFolder = project.getProjectDirectory().getFileObject("data");
             List<Node> result = new ArrayList<>();
-//            if (contribsFolder != null) {
-//                for (FileObject contribsFolderFile : contribsFolder.getChildren()) {
-//                    try {
-//                        result.add(DataObject.find(contribsFolderFile).getNodeDelegate());
-//                    } catch (DataObjectNotFoundException ex) {
-//                        Exceptions.printStackTrace(ex);
-//                    }
-//                }
-//                if (result.isEmpty()) {
-                    try {
-                        DataNode contribsNode = (DataNode)DataObject.find(contribsFolder).getNodeDelegate();
-                        result.add(contribsNode);
-                    } catch (DataObjectNotFoundException ex) {
-                        Exceptions.printStackTrace(ex);
-                    }
-//                    AbstractNode nd = new AbstractNode(Children.LEAF);
-//                    nd.setDisplayName("Contribs");
-//                    result.add(nd);
-//                    nd.
-//                }
-//            }
+            try {
+                result.add(DataObject.find(dataFolder).getNodeDelegate());
+            } catch (DataObjectNotFoundException ex) {
+                Exceptions.printStackTrace(ex);
+            }
             return result;
         }
 
@@ -64,7 +47,7 @@ public class ProcessingContribsNodeFactory implements NodeFactory {
         public Node node(Node node) {
             return new FilterNode(node);
         }
-        
+
         @Override
         public void addNotify() {
         }
