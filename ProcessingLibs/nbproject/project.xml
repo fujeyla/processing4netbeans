@@ -4,7 +4,7 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/nb-module-project/3">
             <code-name-base>org.netbeans.modules.java.processingproject</code-name-base>
-            <standalone/>
+            <suite-component/>
             <module-dependencies>
                 <dependency>
                     <code-name-base>org.apache.tools.ant.module</code-name-base>
@@ -115,11 +115,27 @@
                     </run-dependency>
                 </dependency>
                 <dependency>
+                    <code-name-base>org.openide.actions</code-name-base>
+                    <build-prerequisite/>
+                    <compile-dependency/>
+                    <run-dependency>
+                        <specification-version>6.39.1</specification-version>
+                    </run-dependency>
+                </dependency>
+                <dependency>
                     <code-name-base>org.openide.awt</code-name-base>
                     <build-prerequisite/>
                     <compile-dependency/>
                     <run-dependency>
                         <implementation-version/>
+                    </run-dependency>
+                </dependency>
+                <dependency>
+                    <code-name-base>org.openide.dialogs</code-name-base>
+                    <build-prerequisite/>
+                    <compile-dependency/>
+                    <run-dependency>
+                        <specification-version>7.42.1</specification-version>
                     </run-dependency>
                 </dependency>
                 <dependency>

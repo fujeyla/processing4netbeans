@@ -35,10 +35,12 @@ public class ProcessingDataNodeFactory implements NodeFactory {
         public List<Node> keys() {
             FileObject dataFolder = project.getProjectDirectory().getFileObject("data");
             List<Node> result = new ArrayList<>();
-            try {
-                result.add(DataObject.find(dataFolder).getNodeDelegate());
-            } catch (DataObjectNotFoundException ex) {
-                Exceptions.printStackTrace(ex);
+            if (dataFolder != null) {
+                try {
+                    result.add(DataObject.find(dataFolder).getNodeDelegate());
+                } catch (DataObjectNotFoundException ex) {
+                    Exceptions.printStackTrace(ex);
+                }
             }
             return result;
         }

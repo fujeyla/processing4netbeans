@@ -36,27 +36,13 @@ public class ProcessingContribsNodeFactory implements NodeFactory {
         public List<Node> keys() {
             FileObject contribsFolder = project.getProjectDirectory().getFileObject("contribs");
             List<Node> result = new ArrayList<>();
-//            if (contribsFolder != null) {
-//                for (FileObject contribsFolderFile : contribsFolder.getChildren()) {
-//                    try {
-//                        result.add(DataObject.find(contribsFolderFile).getNodeDelegate());
-//                    } catch (DataObjectNotFoundException ex) {
-//                        Exceptions.printStackTrace(ex);
-//                    }
-//                }
-//                if (result.isEmpty()) {
-                    try {
-                        DataNode contribsNode = (DataNode)DataObject.find(contribsFolder).getNodeDelegate();
-                        result.add(contribsNode);
-                    } catch (DataObjectNotFoundException ex) {
-                        Exceptions.printStackTrace(ex);
-                    }
-//                    AbstractNode nd = new AbstractNode(Children.LEAF);
-//                    nd.setDisplayName("Contribs");
-//                    result.add(nd);
-//                    nd.
-//                }
-//            }
+            if (contribsFolder != null) {
+                try {
+                    result.add(new ContribsNode(DataObject.find(contribsFolder).getNodeDelegate()));
+                } catch (DataObjectNotFoundException ex) {
+                    Exceptions.printStackTrace(ex);
+                }
+            }
             return result;
         }
 
@@ -64,7 +50,7 @@ public class ProcessingContribsNodeFactory implements NodeFactory {
         public Node node(Node node) {
             return new FilterNode(node);
         }
-        
+
         @Override
         public void addNotify() {
         }

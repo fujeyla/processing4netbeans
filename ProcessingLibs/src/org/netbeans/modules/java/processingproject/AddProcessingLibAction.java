@@ -6,26 +6,40 @@
 package org.netbeans.modules.java.processingproject;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import org.openide.awt.ActionID;
-import org.openide.awt.ActionReference;
-import org.openide.awt.ActionRegistration;
-import org.openide.util.NbBundle.Messages;
+import java.io.IOException;
+import javax.swing.AbstractAction;
+import org.openide.DialogDisplayer;
+import org.openide.NotifyDescriptor;
+import org.openide.loaders.DataFolder;
+import org.openide.util.Exceptions;
+import org.openide.util.NbBundle;
 
-@ActionID(
-        category = "Build",
-        id = "org.netbeans.modules.java.processingproject.AddProcessingLibAction"
-)
-@ActionRegistration(
-        iconBase = "org/netbeans/modules/java/processingproject/ProcessingFileTemplate.png",
-        displayName = "#CTL_AddProcessingLibAction"
-)
-@ActionReference(path = "Loaders/folder/any/Actions")
-@Messages("CTL_AddProcessingLibAction=Add Processing.org Lib")
-public final class AddProcessingLibAction implements ActionListener {
+public final class AddProcessingLibAction extends AbstractAction {
 
+    private final DataFolder folder;
+
+    public AddProcessingLibAction(DataFolder df) {
+        super(NbBundle.getMessage(AddProcessingLibAction.class, "FN_addprocessingcontrib"));
+        folder = df;
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO implement action body
+        NotifyDescriptor.InputLine nd = new NotifyDescriptor.InputLine(
+                "do you want to add a contribs lib?",
+                "Processing Contribs Lib",
+                NotifyDescriptor.OK_CANCEL_OPTION,
+                NotifyDescriptor.PLAIN_MESSAGE);
+
+        Object result = DialogDisplayer.getDefault().notify(nd);
+
+        if (result.equals(NotifyDescriptor.OK_OPTION)) {
+            final String folderString = nd.getInputText();
+            try {
+                DataFolder.create(folder, folderString);
+            } catch (IOException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+        }
     }
 }
