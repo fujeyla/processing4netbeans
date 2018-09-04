@@ -7,6 +7,7 @@ package org.netbeans.modules.java.processingproject;
 
 import java.awt.Image;
 import javax.swing.Action;
+import org.netbeans.modules.java.j2seproject.J2SEProject;
 import org.openide.filesystems.FileUtil;
 import org.openide.loaders.DataFolder;
 import org.openide.nodes.FilterNode;
@@ -15,15 +16,18 @@ import org.openide.util.ImageUtilities;
 
 public class ContribsNode extends FilterNode {
 
-    public ContribsNode(Node folderNode) {
+    private final J2SEProject project;
+
+    public ContribsNode(Node folderNode, J2SEProject project) {
         super(folderNode);
+        this.project = project;
     }
 
     @Override
     public javax.swing.Action[] getActions(boolean popup) {
         DataFolder df = getLookup().lookup(DataFolder.class);
         return new Action[]{
-            new AddProcessingLibAction(df)
+            new AddProcessingLibAction(df, this.project)
         };
     }
 

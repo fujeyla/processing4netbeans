@@ -38,7 +38,7 @@ public class ProcessingContribsNodeFactory implements NodeFactory {
             List<Node> result = new ArrayList<>();
             if (contribsFolder != null) {
                 try {
-                    result.add(new ContribsNode(DataObject.find(contribsFolder).getNodeDelegate()));
+                    result.add(new ContribsNode(DataObject.find(contribsFolder).getNodeDelegate(), project));
                 } catch (DataObjectNotFoundException ex) {
                     Exceptions.printStackTrace(ex);
                 }

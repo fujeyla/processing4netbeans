@@ -7,22 +7,33 @@ package org.netbeans.modules.java.processingproject;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.logging.Logger;
 import javax.swing.AbstractAction;
+import org.netbeans.api.java.classpath.ClassPath;
+import org.netbeans.modules.java.j2seproject.J2SEProject;
+import org.netbeans.spi.project.support.ant.PropertyEvaluator;
 import org.openide.DialogDisplayer;
 import org.openide.NotifyDescriptor;
+import org.openide.filesystems.FileObject;
 import org.openide.loaders.DataFolder;
 import org.openide.util.Exceptions;
 import org.openide.util.NbBundle;
 
 public final class AddProcessingLibAction extends AbstractAction {
 
-    private final DataFolder folder;
+    private static final Logger LOGGER = Logger.getLogger(AddProcessingLibAction.class.getName());
 
-    public AddProcessingLibAction(DataFolder df) {
+    private final DataFolder folder;
+    private final J2SEProject project;
+    private PropertyEvaluator eval;
+
+    public AddProcessingLibAction(DataFolder df, J2SEProject project) {
         super(NbBundle.getMessage(AddProcessingLibAction.class, "FN_addprocessingcontrib"));
-        folder = df;
+        this.folder = df;
+        this.project = project;
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         NotifyDescriptor.InputLine nd = new NotifyDescriptor.InputLine(
@@ -37,6 +48,10 @@ public final class AddProcessingLibAction extends AbstractAction {
             final String folderString = nd.getInputText();
             try {
                 DataFolder.create(folder, folderString);
+                FileObject[] compileRoots = ClassPath.getClassPath(folder.getPrimaryFile(), ClassPath.COMPILE).getRoots();
+                LOGGER.info("compileRoots are: " + Arrays.asList(compileRoots));
+                this.eval = this.project.getAntProjectHelper().getStandardPropertyEvaluator();
+                LOGGER.info("javac.classpath is : " + this.eval.getProperty("javac.classpath"));
             } catch (IOException ex) {
                 Exceptions.printStackTrace(ex);
             }
