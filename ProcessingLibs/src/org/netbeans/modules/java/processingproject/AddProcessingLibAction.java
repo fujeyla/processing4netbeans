@@ -52,6 +52,19 @@ public final class AddProcessingLibAction extends AbstractAction {
                 LOGGER.info("compileRoots are: " + Arrays.asList(compileRoots));
                 this.eval = this.project.getAntProjectHelper().getStandardPropertyEvaluator();
                 LOGGER.info("javac.classpath is : " + this.eval.getProperty("javac.classpath"));
+
+//                AntArtifactProvider ap = libPrj.getLookup().lookup(AntArtifactProvider.class);
+//                AntArtifact[] aas = ap.getBuildArtifacts();
+//                AntArtifact output = null;
+//                for (int i = 0; i < aas.length; i++) {
+//                    if (JavaProjectConstants.ARTIFACT_TYPE_JAR.equals(aas[i].getType())) {
+//                        output = aas[i];
+//                        break;
+//                    }
+//                }
+//                assertNotNull(output);
+//                ProjectClassPathModifier.addAntArtifacts(new AntArtifact[]{output}, new URI[]{output.getArtifactLocations()[0]}, this.src, ClassPath.COMPILE);
+
             } catch (IOException ex) {
                 Exceptions.printStackTrace(ex);
             }
