@@ -210,7 +210,7 @@ public class ProcessingSketchTemplatePanelVisual extends JPanel implements Docum
 
         String projectName = (String) settings.getProperty("name");
         if (projectName == null) {
-            projectName = "ProcessingSketchTemplate";
+            projectName = "MyProcessingSketch";
         }
         this.projectNameTextField.setText(projectName);
         this.projectNameTextField.selectAll();

@@ -50,7 +50,7 @@ import org.xml.sax.InputSource;
     @TemplateRegistration(folder = "Project/Processing", 
                           displayName = "#ProcessingSketchTemplate_displayName", 
                           description = "ProcessingSketchTemplateDescription.html", 
-                          iconBase = "org/processing/processingsketchtemplate/ProcessingSketchTemplate.png", 
+                          iconBase = "org/processing/processingsketchtemplate/ProcessingLogo.png", 
                           content = "ProcessingSketchTemplateProject.zip")
 
 @Messages({
