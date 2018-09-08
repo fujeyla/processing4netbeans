@@ -7,15 +7,18 @@ package org.netbeans.modules.java.processingproject;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import org.netbeans.api.java.classpath.ClassPath;
+import org.netbeans.api.java.project.classpath.ProjectClassPathModifier;
 import org.netbeans.modules.java.j2seproject.J2SEProject;
 import org.netbeans.spi.project.support.ant.PropertyEvaluator;
 import org.openide.DialogDisplayer;
 import org.openide.NotifyDescriptor;
 import org.openide.filesystems.FileObject;
+import org.openide.filesystems.FileUtil;
 import org.openide.loaders.DataFolder;
 import org.openide.util.Exceptions;
 import org.openide.util.NbBundle;
@@ -52,19 +55,17 @@ public final class AddProcessingLibAction extends AbstractAction {
                 LOGGER.info("compileRoots are: " + Arrays.asList(compileRoots));
                 this.eval = this.project.getAntProjectHelper().getStandardPropertyEvaluator();
                 LOGGER.info("javac.classpath is : " + this.eval.getProperty("javac.classpath"));
-
-//                AntArtifactProvider ap = libPrj.getLookup().lookup(AntArtifactProvider.class);
-//                AntArtifact[] aas = ap.getBuildArtifacts();
-//                AntArtifact output = null;
-//                for (int i = 0; i < aas.length; i++) {
-//                    if (JavaProjectConstants.ARTIFACT_TYPE_JAR.equals(aas[i].getType())) {
-//                        output = aas[i];
-//                        break;
-//                    }
-//                }
-//                assertNotNull(output);
-//                ProjectClassPathModifier.addAntArtifacts(new AntArtifact[]{output}, new URI[]{output.getArtifactLocations()[0]}, this.src, ClassPath.COMPILE);
-
+                FileObject newContribFo = this.project.getProjectDirectory().getFileObject("contribs").getFileObject(folderString);
+                FileObject newContribLibrary = newContribFo.getFileObject("library");
+                FileObject[] libraryChildren = newContribLibrary.getChildren();
+                LOGGER.info(" libraryChildren are " + Arrays.asList(libraryChildren));
+                for (FileObject libraryFile : libraryChildren) {
+                    if(libraryFile.getExt().equals("jar")){
+                        LOGGER.info("FOUND " + libraryFile.getName() + " to add");
+                        ProjectClassPathModifier.addRoots(new URL[]{FileUtil.getArchiveRoot(libraryFile.toURL())}, this.project.getSourceRoots().getRoots()[0], ClassPath.COMPILE);
+                    }
+                }
+                LOGGER.info("javac.classpath after adding contrib is : " + this.eval.getProperty("javac.classpath"));
             } catch (IOException ex) {
                 Exceptions.printStackTrace(ex);
             }
