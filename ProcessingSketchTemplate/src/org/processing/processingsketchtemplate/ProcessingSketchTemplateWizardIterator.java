@@ -54,7 +54,7 @@ import org.xml.sax.InputSource;
                           content = "ProcessingSketchTemplateProject.zip")
 
 @Messages({
-    "ProcessingSketchTemplate_displayName=Processing Sketch Template"
+    "ProcessingSketchTemplate_displayName=Java Processing Sketch Template"
 })
 
 public class ProcessingSketchTemplateWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
