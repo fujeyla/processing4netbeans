@@ -6,7 +6,9 @@
 package org.processing.netbeanscontribs;
 
 import java.awt.Desktop;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,6 +18,10 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.concurrent.Service;
@@ -27,6 +33,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -41,6 +48,7 @@ import org.processing.netbeanscontribs.contributions.ContributionsReader;
  */
 public class ContribsDownloadController implements Initializable {
 
+    private static final int UNZIP_BUFFER_SIZE = 4096;
     private static final String PROCESSING_ORG_LISTING_URL = "http://download.processing.org/contribs";
     private static final String LOCAL_FILENAME = "contribs.txt";
 
@@ -80,6 +88,70 @@ public class ContribsDownloadController implements Initializable {
     @FXML
     private ProgressIndicator contribsLoadingProgressIndicator;
 
+    @FXML
+    private ProgressBar downloadProgressBar;
+
+    private Contribution selectedContrib;
+
+    private String folderPath;
+
+    public String getFolderPath() {
+        return folderPath;
+    }
+
+    public void setFolderPath(String folderPath) {
+        this.folderPath = folderPath;
+    }
+
+    public class DownloadContribService extends Service<String> {
+
+        private final String urlStr;
+        private final String folderPath;
+        private Downloader downloader;
+
+        public DownloadContribService(String urlString, String folderPath) {
+            this.urlStr = urlString;
+            this.folderPath = folderPath;
+        }
+
+        @Override
+        protected Task<String> createTask() {
+            return new Task<String>() {
+                @Override
+                protected String call() throws Exception {
+
+                    downloader = new Downloader(new URL(urlStr), folderPath);
+                    downloadProgressBar.visibleProperty().bind(downloader.getRunningProperty());
+                    downloadProgressBar.progressProperty().bind(downloader.getProgressProperty());
+                    installButton.disableProperty().bind(downloader.getRunningProperty());
+                    downloader.getRunningProperty().addListener((observable, oldValue, newValue) -> {
+                        if (oldValue == true && newValue == false) {
+                            if (downloader.getStatus() == downloader.COMPLETE) {
+                                try {
+                                    unzip(downloader.getDownloadedFilePath(), folderPath);
+                                    File file = new File(downloader.getDownloadedFilePath());
+                                    if(file.delete()){
+                                        System.out.println("archive successfully deleted");
+                                    }else{
+                                        System.out.println("unable to delete archive");
+                                    }
+                                } catch (IOException ex) {
+                                    Logger.getLogger(ContribsDownloadController.class.getName()).log(Level.SEVERE, "Unable to unzip or delete downloaded file " + downloader.getDownloadedFilePath(), ex);
+                                }
+
+                            }
+                        }
+                    });
+                    return null;
+                }
+            };
+        }
+
+        public String getDownloadedFilePath() {
+            return downloader.getDownloadedFilePath();
+        }
+    }
+
     public class InitService extends Service<String> {
 
         @Override
@@ -95,9 +167,9 @@ public class ContribsDownloadController implements Initializable {
 
                     ContributionsReader contributionsReader = new ContributionsReader(tempContribFile.getPath());
                     ObservableList<Contribution> contributions = contributionsReader.read();
-                    for (Contribution contribution : contributions) {
-                        System.out.println("Contribution is : " + contribution);
-                    }
+//                    for (Contribution contribution : contributions) {
+//                        System.out.println("Contribution is : " + contribution);
+//                    }
 
                     nameColumn.setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
                     purposeColumn.setCellValueFactory(cellData -> cellData.getValue().getSentenceProperty());
@@ -122,7 +194,7 @@ public class ContribsDownloadController implements Initializable {
                                 return true;
                             } else if (contrib.getAuthors().toLowerCase().contains(lowerCaseFilter)) {
                                 return true;
-                            } else if (contrib.getParagraph()!=null && contrib.getParagraph().toLowerCase().contains(lowerCaseFilter)) {
+                            } else if (contrib.getParagraph() != null && contrib.getParagraph().toLowerCase().contains(lowerCaseFilter)) {
                                 return true;
                             }
 
@@ -154,6 +226,7 @@ public class ContribsDownloadController implements Initializable {
 
     private void showContribDetails(Contribution contrib) {
         if (contrib != null) {
+            this.selectedContrib = contrib;
             selectedContribNameAndLink.setText(contrib.getName());
             selectedContribNameAndLink.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
@@ -197,6 +270,47 @@ public class ContribsDownloadController implements Initializable {
             sbAuthors.deleteCharAt(sbAuthors.length() - 1);
         }
         return sbAuthors.toString();
+    }
+
+    @FXML
+    public void downloadAndInstall(ActionEvent actionEvent) {
+        DownloadContribService downloadService = new DownloadContribService(this.selectedContrib.getDownloadUrl(), this.folderPath);
+        downloadService.restart();
+
+    }
+
+    public void unzip(String zipFilePath, String destDirectory) throws IOException {
+        File destDir = new File(destDirectory);
+        if (!destDir.exists()) {
+            destDir.mkdir();
+        }
+        ZipInputStream zipIn = new ZipInputStream(new FileInputStream(zipFilePath));
+        ZipEntry entry = zipIn.getNextEntry();
+        // iterates over entries in the zip file
+        while (entry != null) {
+            String filePath = destDirectory + File.separator + entry.getName();
+            if (!entry.isDirectory()) {
+                // if the entry is a file, extracts it
+                extractFile(zipIn, filePath);
+            } else {
+                // if the entry is a directory, make the directory
+                File dir = new File(filePath);
+                dir.mkdir();
+            }
+            zipIn.closeEntry();
+            entry = zipIn.getNextEntry();
+        }
+        zipIn.close();
+    }
+
+    private void extractFile(ZipInputStream zipIn, String filePath) throws IOException {
+        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath));
+        byte[] bytesIn = new byte[UNZIP_BUFFER_SIZE];
+        int read = 0;
+        while ((read = zipIn.read(bytesIn)) != -1) {
+            bos.write(bytesIn, 0, read);
+        }
+        bos.close();
     }
 
     static boolean download(URL source, byte[] post, File dest) {

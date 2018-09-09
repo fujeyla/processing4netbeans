@@ -81,23 +81,11 @@ public class ContribsDownloadApplication extends JApplet {
     }
 
     private void createScene() throws IOException {
-//        Button btn = new Button();
-//        btn.setText("Say 'Hello World'");
-//        btn.setOnAction(new EventHandler<ActionEvent>() {
-//            
-//            @Override
-//            public void handle(ActionEvent event) {
-//                System.out.println("Hello World!");
-//            }
-//        });
-//        StackPane root = new StackPane();
-//        root.getChildren().add(btn);
-//        fxContainer.setScene(new Scene(root));
-
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ContribsDownloadApplication.class.getResource("ContribsDownloadFXML.fxml"));
         AnchorPane contribsOverview = (AnchorPane) loader.load();
-//        ContribsDownloadController controller = loader.getController();     
+        ContribsDownloadController controller = loader.getController();     
+        controller.setFolderPath(".\\");
         StackPane root = new StackPane();
         root.getChildren().add(contribsOverview);
         fxContainer.setScene(new Scene(root));
