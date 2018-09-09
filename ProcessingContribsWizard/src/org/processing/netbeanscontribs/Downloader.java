@@ -10,17 +10,13 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
-// This class downloads a file from a URL.
 public class Downloader extends Observable implements Runnable {
 
-// Max size of download buffer.
     private static final int MAX_BUFFER_SIZE = 1024;
 
-// These are the status names.
     public static final String STATUSES[] = {"Downloading",
         "Paused", "Complete", "Cancelled", "Error"};
 
-// These are the status codes.
     public static final int DOWNLOADING = 0;
     public static final int PAUSED = 1;
     public static final int COMPLETE = 2;
@@ -38,7 +34,7 @@ public class Downloader extends Observable implements Runnable {
 
     private int status; // current status of download
 
-// Constructor for Download.
+
     public Downloader(URL url, String folderPath) {
         this.url = url;
         this.folderPath = folderPath;
@@ -50,58 +46,48 @@ public class Downloader extends Observable implements Runnable {
         download();
     }
 
-// Get this download's URL.
     public String getUrl() {
         return url.toString();
     }
 
-// Get this download's size.
     public int getSize() {
         return sizeProperty.get();
     }
 
-// Get this download's progress.
     public float getProgress() {
         return ((float) downloadedProperty.get() / sizeProperty.get());
     }
 
-// Get this download's status.
     public int getStatus() {
         return status;
     }
 
-// Pause this download.
     public void pause() {
         status = PAUSED;
         stateChanged();
     }
 
-// Resume this download.
     public void resume() {
         status = DOWNLOADING;
         stateChanged();
         download();
     }
 
-// Cancel this download.
     public void cancel() {
         status = CANCELLED;
         stateChanged();
     }
 
-// Mark this download as having an error.
     private void error() {
         status = ERROR;
         stateChanged();
     }
 
-// Start or resume downloading.
     private void download() {
         Thread thread = new Thread(this);
         thread.start();
     }
 
-// Get file name portion of URL.
     private String getFileName(URL url) {
         String fileName = url.getFile();
         return fileName.substring(fileName.lastIndexOf('/') + 1);
@@ -200,7 +186,6 @@ public class Downloader extends Observable implements Runnable {
         }
     }
 
-// Notify observers that this download's status has changed.
     private void stateChanged() {
         setChanged();
         notifyObservers();

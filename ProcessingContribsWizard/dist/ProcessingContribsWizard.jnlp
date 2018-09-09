@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ProcessingContribsWizard.jnlp">
+  <information>
+    <title>ProcessingContribsWizard</title>
+    <vendor>jerom</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ProcessingContribsWizard.jar" size="27433" download="eager" />
+  </resources>
+  <application-desc main-class="org.processing.netbeanscontribs.ContribsDownloadApplication"  name="ProcessingContribsWizard" >
+  </application-desc>
+  <update check="always"/>
+</jnlp>
