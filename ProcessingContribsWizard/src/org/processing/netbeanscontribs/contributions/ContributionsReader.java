@@ -1,17 +1,21 @@
-package processinglibrarymanager;
+package org.processing.netbeanscontribs.contributions;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.SortedList;
 
 public class ContributionsReader {
 
+    private final ObservableList<Contribution> contributions = FXCollections.observableArrayList();
+
     private static final Logger LOGGER = Logger.getLogger(ContributionsReader.class.getName());
-    
+
     private final String filename;
 
     public String getFilename() {
@@ -22,9 +26,9 @@ public class ContributionsReader {
         this.filename = filename;
     }
 
-    public List<Contribution> read() throws IOException {
+    public ObservableList<Contribution> read() throws IOException {
 
-        List<Contribution> contributions = new ArrayList<>();
+        contributions.clear();
 
         FileInputStream fis = new FileInputStream(filename);
         String type = null;
@@ -106,13 +110,20 @@ public class ContributionsReader {
                         categories = null;
                     }
                 }
-            }catch(Exception e){
-                LOGGER.warning("unable to read line: " + line + " for library name: " + name);
+            } catch (NumberFormatException e) {
+                LOGGER.log(Level.WARNING, "unable to read line: " + line + " for library name: " + name, e);
             }
         }
 
         br.close();
-        return contributions;
+
+        SortedList<Contribution> sortedList = new SortedList<Contribution>(contributions,
+                (Contribution contrib1, Contribution contrib2) -> {
+                    
+                    return contrib1.getName().compareTo(contrib2.getName());
+                });
+
+        return sortedList;
     }
 
 }

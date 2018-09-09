@@ -3,10 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package processinglibrarymanager;
+package org.processing.netbeanscontribs.contributions;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,7 +13,6 @@ import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.List;
-import java.util.zip.GZIPOutputStream;
 
 /**
  *
@@ -46,18 +43,6 @@ public class ProcessingLibraryManager {
                 conn.setRequestMethod("GET");
                 conn.connect();
             } 
-            
-//            else {
-//                post = gzipEncode(post);
-//                conn.setRequestMethod("POST");
-//                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-//                conn.setRequestProperty("Content-Encoding", "gzip");
-//                conn.setRequestProperty("Content-Length", String.valueOf(post.length));
-//                conn.setUseCaches(false);
-//                conn.setDoInput(true);
-//                conn.setDoOutput(true);
-//                conn.getOutputStream().write(post);
-//            }
 
             InputStream in = conn.getInputStream();
             FileOutputStream out = new FileOutputStream(dest);
