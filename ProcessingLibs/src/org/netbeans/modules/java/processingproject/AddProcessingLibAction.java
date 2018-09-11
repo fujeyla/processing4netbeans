@@ -5,70 +5,129 @@
  */
 package org.netbeans.modules.java.processingproject;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
+import javafx.embed.swing.JFXPanel;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javax.swing.AbstractAction;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
 import org.netbeans.api.java.classpath.ClassPath;
 import org.netbeans.api.java.project.classpath.ProjectClassPathModifier;
 import org.netbeans.modules.java.j2seproject.J2SEProject;
+import org.netbeans.modules.java.processingproject.contributions.dialog.ContribsDownloadController;
 import org.netbeans.spi.project.support.ant.PropertyEvaluator;
-import org.openide.DialogDisplayer;
-import org.openide.NotifyDescriptor;
+import org.openide.DialogDescriptor;
 import org.openide.filesystems.FileObject;
 import org.openide.filesystems.FileUtil;
 import org.openide.loaders.DataFolder;
+import org.openide.loaders.DataObject;
 import org.openide.util.Exceptions;
 import org.openide.util.NbBundle;
+import org.openide.windows.WindowManager;
 
 public final class AddProcessingLibAction extends AbstractAction {
 
     private static final Logger LOGGER = Logger.getLogger(AddProcessingLibAction.class.getName());
+    private static final int JFXPANEL_WIDTH_INT = 710;
+    private static final int JFXPANEL_HEIGHT_INT = 400;
 
-    private final DataFolder folder;
+    private final DataFolder contribsFolder;
     private final J2SEProject project;
     private PropertyEvaluator eval;
 
     public AddProcessingLibAction(DataFolder df, J2SEProject project) {
         super(NbBundle.getMessage(AddProcessingLibAction.class, "FN_addprocessingcontrib"));
-        this.folder = df;
+        this.contribsFolder = df;
         this.project = project;
     }
 
+    DialogDescriptor dialogDescriptor;
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        NotifyDescriptor.InputLine nd = new NotifyDescriptor.InputLine(
-                "do you want to add a contribs lib?",
-                "Processing Contribs Lib",
-                NotifyDescriptor.OK_CANCEL_OPTION,
-                NotifyDescriptor.PLAIN_MESSAGE);
+        JFXPanel jfxPanel = initFxContainer(this.project.getProjectDirectory().getPath() + File.separator + contribsFolder.getName() + File.separator);
 
-        Object result = DialogDisplayer.getDefault().notify(nd);
+        Frame mainFrame = WindowManager.getDefault().getMainWindow();
+        JDialog dialog = new JDialog(mainFrame);
+        dialog.setTitle("Add processing.org contributions libraries...");
+        JPanel contentPane = new JPanel();
+        contentPane.setLayout(new BorderLayout());
+        dialog.setContentPane(contentPane);
+        contentPane.add(jfxPanel, BorderLayout.CENTER);
+        dialog.setModal(true);
+        dialog.pack();
+        dialog.setLocationRelativeTo(mainFrame);
+        //dialog.setLocation((mainFrame.getWidth() - JFXPANEL_WIDTH_INT)/2, (mainFrame.getHeight() - JFXPANEL_HEIGHT_INT)/2);
+        dialog.setVisible(true);
+        
 
-        if (result.equals(NotifyDescriptor.OK_OPTION)) {
-            final String folderString = nd.getInputText();
+        DataObject[] contribsSubFolders = contribsFolder.getChildren();
+        for (DataObject contribsSubFolder : contribsSubFolders) {
+
+            final String folderString = contribsSubFolder.getName();
             try {
-                DataFolder.create(folder, folderString);
-                FileObject[] compileRoots = ClassPath.getClassPath(folder.getPrimaryFile(), ClassPath.COMPILE).getRoots();
-                LOGGER.info("compileRoots are: " + Arrays.asList(compileRoots));
+
+
+                FileObject[] compileRoots = ClassPath.getClassPath(contribsFolder.getPrimaryFile(), ClassPath.COMPILE).getRoots();
                 this.eval = this.project.getAntProjectHelper().getStandardPropertyEvaluator();
                 LOGGER.info("javac.classpath is : " + this.eval.getProperty("javac.classpath"));
-                FileObject newContribFo = this.project.getProjectDirectory().getFileObject("contribs").getFileObject(folderString);
-                FileObject newContribLibrary = newContribFo.getFileObject("library");
-                FileObject[] libraryChildren = newContribLibrary.getChildren();
-                LOGGER.info(" libraryChildren are " + Arrays.asList(libraryChildren));
-                for (FileObject libraryFile : libraryChildren) {
-                    if(libraryFile.getExt().equals("jar")){
-                        LOGGER.info("FOUND " + libraryFile.getName() + " to add");
-                        ProjectClassPathModifier.addRoots(new URL[]{FileUtil.getArchiveRoot(libraryFile.toURL())}, this.project.getSourceRoots().getRoots()[0], ClassPath.COMPILE);
+                FileObject contribFo = this.project.getProjectDirectory().getFileObject("contribs").getFileObject(folderString);
+                FileObject contribLibrary = contribFo.getFileObject("library");
+                if(contribLibrary!=null){
+                    FileObject[] libraryChildren = contribLibrary.getChildren();
+                    for (FileObject libraryFile : libraryChildren) {
+                        if (libraryFile.getExt().equals("jar")) {
+                            ProjectClassPathModifier.addRoots(new URL[]{FileUtil.getArchiveRoot(libraryFile.toURL())}, this.project.getSourceRoots().getRoots()[0], ClassPath.COMPILE);
+                        }
                     }
+                    LOGGER.info("javac.classpath after adding contrib is : " + this.eval.getProperty("javac.classpath"));
                 }
-                LOGGER.info("javac.classpath after adding contrib is : " + this.eval.getProperty("javac.classpath"));
             } catch (IOException ex) {
                 Exceptions.printStackTrace(ex);
             }
         }
     }
+
+    
+
+    public JFXPanel initFxContainer(final String contribsFolderPath) {
+        final JFXPanel fxContainer = new JFXPanel();
+        fxContainer.setPreferredSize(new Dimension(JFXPANEL_WIDTH_INT, JFXPANEL_HEIGHT_INT));
+        Platform.runLater(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+                    createScene(fxContainer, contribsFolderPath);
+                } catch (IOException ex) {
+                    Logger.getLogger(ContribsDownloadController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        return fxContainer;
+    }
+
+    private void createScene(JFXPanel fxContainer, String contribsFolderPath) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(ContribsDownloadController.class.getResource("ContribsDownloadFXML.fxml"));
+        AnchorPane contribsOverview = (AnchorPane) loader.load();
+        ContribsDownloadController controller = loader.getController();
+        controller.setFolderPath(contribsFolderPath);
+        StackPane root = new StackPane();
+        root.getChildren().add(contribsOverview);
+        fxContainer.setScene(new Scene(root));
+    }
+
 }
