@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.processing.netbeanscontribs;
+
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -20,6 +20,7 @@ import javax.swing.JApplet;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import org.netbeans.modules.java.processingproject.contributions.dialog.ContribsDownloadController;
 
 /**
  *
@@ -27,7 +28,7 @@ import javax.swing.UIManager;
  */
 public class ContribsDownloadApplication extends JApplet {
 
-    private static final int JFXPANEL_WIDTH_INT = 660;
+    private static final int JFXPANEL_WIDTH_INT = 710;
     private static final int JFXPANEL_HEIGHT_INT = 400;
     private static JFXPanel fxContainer;
 
@@ -82,7 +83,7 @@ public class ContribsDownloadApplication extends JApplet {
 
     private void createScene() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(ContribsDownloadApplication.class.getResource("ContribsDownloadFXML.fxml"));
+        loader.setLocation(ContribsDownloadController.class.getResource("ContribsDownloadFXML.fxml"));
         AnchorPane contribsOverview = (AnchorPane) loader.load();
         ContribsDownloadController controller = loader.getController();     
         controller.setFolderPath(".\\");
