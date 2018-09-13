@@ -12,4 +12,6 @@ Netbeans (http://netbeans.org) is a great Open Source IDE when it comes to produ
 - add processing.org contributions libraries thanks to an included downloader/installer
 - benefit from code completion, debugger, profiler and other usual tools from the netbeans IDE
 
-Currently, the netbeans 8 version is supported.
+Currently, the netbeans 8 version is supported
+
+- notice the plugin is not officially released yet on the netbeans plugins page, coming soon -
