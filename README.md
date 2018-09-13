@@ -10,3 +10,5 @@ What is the advantage of doing so? Sometimes, java developers just love playing 
 Netbeans (http://netbeans.org) is a great Open Source IDE when it comes to produce java code, and this plugin aims at making easier the way to work with porcessing within you java code, allowing to: 
 - create a java processing project from a provided template including processing libs
 - add processing.org contributions libraries thanks to an included downloader/installer
+
+Currently, the netbean 8 version is supported.
