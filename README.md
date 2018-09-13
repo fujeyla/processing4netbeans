@@ -14,4 +14,4 @@ Netbeans (http://netbeans.org) is a great Open Source IDE when it comes to produ
 
 Currently, the netbeans 8 version is supported
 
-- notice the plugin is not officially released yet on the netbeans plugins page, coming soon -
+**_(notice the plugin is not officially released yet on the netbeans plugins page, coming soon)_**
