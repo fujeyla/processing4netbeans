@@ -4,5 +4,6 @@ OpenIDE-Module: org.processing.processingfiletemplates
 OpenIDE-Module-Layer: org/processing/processingfiletemplates/layer.xml
 OpenIDE-Module-Localizing-Bundle: org/processing/processingfiletemplates/Bundle.properties
 OpenIDE-Module-Needs: org.netbeans.api.templates.wizard, javax.script.ScriptEngine.freemarker
+OpenIDE-Module-Implementation-Version: 1
 OpenIDE-Module-Specification-Version: 1.0
 

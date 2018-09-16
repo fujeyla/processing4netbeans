@@ -14,6 +14,7 @@ public class ${name} {
 
     public void draw() {
         //replace this rendering below with yours
+        parent.fill(0,0,0);
         parent.rect(0, 0, 20, 20);
     }
     
