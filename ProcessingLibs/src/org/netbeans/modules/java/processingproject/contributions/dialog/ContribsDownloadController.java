@@ -123,7 +123,7 @@ public class ContribsDownloadController implements Initializable {
                     installButton.disableProperty().bind(downloader.getRunningProperty());
                     downloader.getRunningProperty().addListener((observable, oldValue, newValue) -> {
                         if (oldValue == true && newValue == false) {
-                            if (downloader.getStatus() == downloader.COMPLETE) {
+                            if (downloader.getStatus() == Downloader.COMPLETE) {
                                 try {
                                     unzip(downloader.getDownloadedFilePath(), folderPath);
                                     File file = new File(downloader.getDownloadedFilePath());
@@ -157,7 +157,7 @@ public class ContribsDownloadController implements Initializable {
                 @Override
                 protected String call() throws Exception {
                     URL processingOrgListingURL = new URL(PROCESSING_ORG_LISTING_URL);
-                    File tempContribFile = new File(LOCAL_FILENAME);
+                    File tempContribFile = new File(System.getProperty("netbeans.user") + File.separator + LOCAL_FILENAME);
                     tempContribFile.setWritable(true);
 
                     download(processingOrgListingURL, null, tempContribFile);

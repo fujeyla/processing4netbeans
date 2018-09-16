@@ -36,6 +36,9 @@ public class ContribsDownloadApplication extends JApplet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        System.setProperty("netbeans.user", System.getProperty("user.dir"));
+        
         SwingUtilities.invokeLater(new Runnable() {
 
             @Override
