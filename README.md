@@ -14,6 +14,10 @@ Netbeans (http://netbeans.org) is a great Open Source IDE, and this plugin aims 
 
 Currently, the netbeans 8 version is supported
 
+## Download
+
+You can retrieve the latest compiled version of the plugin [here](https://github.com/fujeyla/processing4netbeans/tree/master/nbm "processing4netbeans nbm")
+
 **_(notice the plugin is not officially released yet on the netbeans plugins page, coming soon)_**
 
 # Getting started
