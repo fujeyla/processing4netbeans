@@ -3,7 +3,7 @@ netbeans plugin to support processing.org API
 
 http://processing.org is a flexible software sketchbook and a language for learning how to code within the context of the visual arts.
 
-As it is based on Java, it is also possible use processing as an external library of a full Java project. 
+As it is based on Java, it is also possible to use processing as an external library of a full Java project. 
 
 What is the advantage of doing so? We all love playing with processing API which is simple, well designed and efficient in the audio/visual digital art domain, but sometimes, we would want to benefit from Java language and its Object Oriented approach when the project *sketches* (name of processing.org programs) start to grow. 
 
