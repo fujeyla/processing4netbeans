@@ -16,4 +16,8 @@ Currently, the netbeans 8 version is supported
 
 **_(notice the plugin is not officially released yet on the netbeans plugins page, coming soon)_**
 
+# Getting started
 
+First create a new Netbeans project and select the Processing Category, you will find the processing java template.
+
+![Creating a java processing project]:(https://github.com/fujeyla/processing4netbeans/blob/master/web/images/newProcessingNetbeansProject.png "Creating a java processing project")
