@@ -1,0 +1,17 @@
+C:\Program Files\NetBeans 8.2\platform=1525986523569
+cluster.C:/Program Files/NetBeans 8.2/nb=1525986412065
+cluster.C:/Program Files/NetBeans 8.2/ide=1525986527449
+cluster.C:/Program Files/NetBeans 8.2/extide=1525986423336
+cluster.C:/Program Files/NetBeans 8.2/java=1525986523169
+cluster.C:/Program Files/NetBeans 8.2/apisupport=1525986482947
+cluster.C:/Program Files/NetBeans 8.2/websvccommon=1525986423336
+cluster.C:/Program Files/NetBeans 8.2/profiler=1525986521508
+cluster.C:/Program Files/NetBeans 8.2/harness=1525986482947
+cluster.C:/Program Files/NetBeans 8.2/javafx=1475191956000
+cluster.C:/Users/jerom/Documents/NetBeansProjects/processing4netbeans/Processing4Netbeans/build/cluster=1537132590956
+user=1537132590956
+crc=7
+locale=fr_CH
+branding=nb
+java.version=1.8.0_171
+java.vm.version=25.171-b11

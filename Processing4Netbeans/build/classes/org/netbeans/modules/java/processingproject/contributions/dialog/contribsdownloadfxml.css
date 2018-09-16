@@ -1,0 +1,16 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    .root{
+        -fx-font-size: 12pt;
+        -fx-base: #030e1a;
+        -fx-background-color: #030e1a;
+    }
+    
+    .bannerPaneClass{
+        -fx-background-image: url("background.png");
+        -fx-background-size: stretch;
+    }
+}

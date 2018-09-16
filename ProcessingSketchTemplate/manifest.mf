@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-AutoUpdate-Show-In-Client: true
-OpenIDE-Module: org.processing.processingsketchtemplate
-OpenIDE-Module-Layer: org/processing/processingsketchtemplate/layer.xml
-OpenIDE-Module-Localizing-Bundle: org/processing/processingsketchtemplate/Bundle.properties
-OpenIDE-Module-Implementation-Version: 1
-OpenIDE-Module-Specification-Version: 1.0
-
