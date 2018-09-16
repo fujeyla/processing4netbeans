@@ -3,11 +3,11 @@ netbeans plugin to support processing.org API
 
 http://processing.org is a flexible software sketchbook and a language for learning how to code within the context of the visual arts.
 
-As it is based on Java, it is also possible to code in this language and use processing as an external library. 
+As it is based on Java, it is also possible to use processing as an external library of a full Java project. 
 
-What is the advantage of doing so? Sometimes, java developers just love playing with processing API which is simple, well designed and efficient in the audio/visual digital art domain. But some prefer to benefit from Java language and its Object Oriented approach when the project sketches (name of processing.org programs) start to grow. 
+What is the advantage of doing so? We all love playing with processing API which is simple, well designed and efficient in the audio/visual digital art domain, but sometimes, we would want to benefit from Java language and its Object Oriented approach when the project *sketches* (name of processing.org programs) start to grow. 
 
-Netbeans (http://netbeans.org) is a great Open Source IDE when it comes to produce java code, and this plugin aims at making easier the way to work with processing within you java code, allowing to: 
+Netbeans (http://netbeans.org) is a great Open Source IDE, and this plugin aims at making easier the way to work with processing within your java code, allowing to: 
 - create a ready-to-run java processing project from a provided project template including processing libs and main class
 - add processing.org contributions libraries thanks to an included downloader/installer
 - benefit from code completion, debugger, profiler and other usual tools from the netbeans IDE
@@ -15,3 +15,36 @@ Netbeans (http://netbeans.org) is a great Open Source IDE when it comes to produ
 Currently, the netbeans 8 version is supported
 
 **_(notice the plugin is not officially released yet on the netbeans plugins page, coming soon)_**
+
+# Getting started
+
+First create a new Netbeans project and select the Processing Category, you will find the processing java template.
+
+![Creating a java processing project](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/newProcessingNetbeansProject.png "Creating a java processing project")
+
+Then you need to set your project's name
+
+![Setting up Netbeans Processing Project](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/namingNetbeansProcessingProject.png "Setting up Netbeans Processing Project")
+
+The following java project structure is created (see project explorer on the left), including a *data* folder for usual processing assets (images, sounds,...) and a *contribs* folder ready to embed external processing.org contributions libraries. The java main class is also created.
+
+You can already run the created project.
+
+![Java Processing Project created structure](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/createdNetbeansProcessingProjectStructure.png "Java Processing Project created structure")
+
+Then, if you want to add some processing.org contributions (*contribs*) libraries, right click on the *contribs* folder in the project explorer, and click on the action: *"Add contribs lib..."*
+
+![Add contribs lib](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/addNetbeansProcessingContrib.png "Add contribs lib")
+
+This opens the processing contribs dialog, letting you choose libraries you want to install and use in your project. The dialog lists all the official libraries. You can filter the libraries entries.
+
+![Add contribs dialog](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/addNetbeansProcessingContribDialog.png "Add contriobs dialog")
+
+For each library you want to install, click on the lower left *"Download and install"* button, this will download the archive of the library in the *contribs* folder. Once you have downloaded all the necessary libs for your project, close the dialog by clicking on the cross at the upper right corner of it. This finalizes the libs installation, by unzipping libs archives (with all associated examples,...) in the *contribs* folder and adding the associated *.jar* files in the project classpath.
+
+![Processing Libs added to classpath](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/addedNetbeansContribAndLibraryWithExamples.png "Processing Libs added to classpath")
+
+You're now able to work with processing.org libs within your netbeans java project!
+
+
+
