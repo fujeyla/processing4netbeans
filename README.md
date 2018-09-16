@@ -20,4 +20,12 @@ Currently, the netbeans 8 version is supported
 
 First create a new Netbeans project and select the Processing Category, you will find the processing java template.
 
-![Creating a java processing project]:(https://github.com/fujeyla/processing4netbeans/blob/master/web/images/newProcessingNetbeansProject.png "Creating a java processing project")
+![Creating a java processing project](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/newProcessingNetbeansProject.png "Creating a java processing project")
+
+Then you need to set your project's name
+
+![Setting up Netbeans Processing Project](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/namingNetbeansProcessingProject.png "Setting up Netbeans Processing Project")
+
+The following java project structure is created (see project explorer on the left), including a data folder for usual processing assets (images, sounds,...) and a contribs folder ready to embed external processing.org contributions libraries
+
+![Java Processing Project created structure](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/createdNetbeansProcessingProjectStructure.png "Java Processing Project created structure")
