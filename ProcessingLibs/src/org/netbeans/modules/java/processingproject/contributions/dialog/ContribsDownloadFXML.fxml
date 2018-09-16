@@ -10,10 +10,12 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="712.0" styleClass="mainFxmlClass" stylesheets="@contribsdownloadfxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.netbeans.modules.java.processingproject.contributions.dialog.ContribsDownloadController">
    <children>
       <Label layoutX="20.0" layoutY="6.0" text="Available processing.org contribs" />
+      <Pane layoutX="8.0" layoutY="231.0" prefHeight="200.0" prefWidth="705.0" styleClass="bannerPaneClass" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="231.0" />
       <TableView fx:id="contribsTableView" layoutY="31.0" prefHeight="200.0" prefWidth="541.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
         <columns>
           <TableColumn fx:id="nameColumn" prefWidth="177.0" text="Name" />

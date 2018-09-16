@@ -3,5 +3,4 @@ AutoUpdate-Show-In-Client: true
 OpenIDE-Module: org.netbeans.modules.java.processingproject
 OpenIDE-Module-Layer: org/netbeans/modules/java/processingproject/layer.xml
 OpenIDE-Module-Localizing-Bundle: org/netbeans/modules/java/processingproject/Bundle.properties
-OpenIDE-Module-Specification-Version: 1.0
-
+OpenIDE-Module-Implementation-Version: 1
