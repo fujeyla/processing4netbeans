@@ -20,6 +20,10 @@ You can retrieve the latest compiled version of the plugin [here](https://github
 
 **_(notice the plugin is not officially released yet on the netbeans plugins page, coming soon)_**
 
+## Supported platforms
+
+This plugin should work on Windows, MacOS and Linux, but I've tested it only on Windows and MacOS. 
+
 # Getting started
 
 First create a new Netbeans project and select the Processing Category, you will find the processing java template.
