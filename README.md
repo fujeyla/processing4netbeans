@@ -16,7 +16,7 @@ Netbeans 8.2 and Netbeans 9 are supported, download the dedicated nbm file.
 
 ## Download
 
-You can retrieve the latest compiled version of the plugin [here](https://github.com/fujeyla/processing4netbeans/tree/master/nbm "processing4netbeans nbm"). Choose either org-netbeans-modules-java-processingproject-nb8.nbm or org-netbeans-modules-java-processingproject-nb9.nbm , depending on your IDE version.
+You can retrieve the latest compiled version of the plugin [here](https://github.com/fujeyla/processing4netbeans/tree/master/nbm "processing4netbeans nbm"). Choose either *org-netbeans-modules-java-processingproject-nb8.nbm* or *org-netbeans-modules-java-processingproject-nb9.nbm*, depending on your IDE version.
 
 **_(notice the plugin is not officially released yet on the netbeans plugins page, coming soon)_**
 
