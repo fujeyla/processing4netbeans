@@ -58,7 +58,7 @@ You're now able to work with processing.org libs within your netbeans java proje
 
 The plugin allows you to create some classes with a template sticking to the processing rendering rules, for example, if you want to create objects with their own rendering to be rendered within the main sketch... let's see how,
 
-![Create a delegated rendering object] (https://github.com/fujeyla/processing4netbeans/blob/master/web/images/createProcessingRenderingClass.PNG "Create a delegated rendering object")
+![Create a delegated rendering object](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/createProcessingRenderingClass.PNG "Create a delegated rendering object")
 
 This creates a class within the main project, a class with the following template:
 
