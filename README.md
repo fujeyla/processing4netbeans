@@ -48,7 +48,7 @@ This opens the processing contribs dialog, letting you choose libraries you want
 
 ![Add contribs dialog](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/addNetbeansProcessingContribDialog.png "Add contriobs dialog")
 
-For each library you want to install, click on the lower left *"Download and install"* button, this will download the archive of the library in the *contribs* folder. Once you have downloaded all the necessary libs for your project, close the dialog by clicking on the cross at the upper right corner of it. This finalizes the libs installation, by unzipping libs archives (with all associated examples,...) in the *contribs* folder and adding the associated *.jar* files in the project classpath.
+For each library you want to install, click on the lower right *"Download and install"* button of the dialog; this will download the archive of the library in the *contribs* folder. Once you have downloaded all the necessary libs for your project, close the dialog by clicking on the cross at the upper right corner of it. This finalizes the libs installation, by unzipping libs archives (with all associated examples,...) in the *contribs* folder and adding the associated *.jar* files in the project classpath.
 
 ![Processing Libs added to classpath](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/addedNetbeansContribAndLibraryWithExamples.png "Processing Libs added to classpath")
 
