@@ -34,7 +34,7 @@ Then you need to set your project's name
 
 ![Setting up Netbeans Processing Project](https://github.com/fujeyla/processing4netbeans/blob/master/web/images/namingNetbeansProcessingProject.png "Setting up Netbeans Processing Project")
 
-The following java project structure is created (see project explorer on the left), including a *data* folder for usual processing assets (images, sounds,...) and a *contribs* folder ready to embed external processing.org contributions libraries. The java main class is also created.
+The following java project structure is created (see project explorer on the left), including a *data* folder for usual processing assets (images, sounds,...) and a *contribs* folder ready to embed external processing.org contributions libraries. The java main class is also created. Finally, all the necessary processing core libs are already there, included as jar files in the project classpath.
 
 You can already run the created project.
 
