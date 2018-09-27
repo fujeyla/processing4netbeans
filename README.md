@@ -20,6 +20,10 @@ You can retrieve the latest compiled version of the plugin [here](https://github
 
 The plugin is also available on the http://plugins.netbeans.org/ website.
 
+## What this plugin is not...
+
+It's not a Processing language IDE, you don't code using the processing language, you code using Java and the processing libs. Feel comfortable: Sketches can easily be translated from Processing language to full Java.
+
 ## Supported platforms
 
 This plugin should work on Windows, MacOS and Linux, but I've tested it only on Windows and MacOS. 
