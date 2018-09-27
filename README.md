@@ -22,7 +22,7 @@ The plugin is also available on the http://plugins.netbeans.org/ website.
 
 ## What this plugin is not...
 
-It's not a Processing language IDE, you don't code using the processing language, you code using Java and the processing libs. Feel comfortable: Sketches can easily be translated from Processing language to full Java.
+It's not a Processing language IDE support plugin: you don't code using the Processing language, you code using Java and the Processing libs. Feel comfortable: Sketches can easily be translated from Processing language to full Java.
 
 ## Supported platforms
 
